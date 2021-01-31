@@ -29,12 +29,21 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V page setup
 	\pagestyle{empty}
 	
-	\setlength{\oddsidemargin}{-1cm}
-	\setlength{\evensidemargin}{-1cm}
-	\setlength{\textwidth}{27cm}
-	\setlength{\textheight}{18.5cm}
+%	\setlength{\oddsidemargin}{-1cm}
+%	\setlength{\evensidemargin}{-1cm}
+%	\setlength{\textwidth}{27cm}
+%	\setlength{\textheight}{18.5cm}
+%	
+%	\setlength{\topmargin}{-1cm}
+%	\setlength{\headheight}{0cm}
+%	\setlength{\headsep}{0cm}
+
+	\setlength{\oddsidemargin}{-1.5cm}
+	\setlength{\evensidemargin}{-1.5cm}
+	\setlength{\textwidth}{27.7cm}
+	\setlength{\textheight}{19cm}
 	
-	\setlength{\topmargin}{-1cm}
+	\setlength{\topmargin}{-1.5cm}
 	\setlength{\headheight}{0cm}
 	\setlength{\headsep}{0cm}
 	
@@ -88,7 +97,7 @@
 		\definecolor{darkred}{rgb}{0.8,0.1,0.1}
 %		\definecolor{darkgreen}{rgb}{0,0.5,0}
 %		\definecolor{darkblue}{rgb}{0,0,0.5}
-		\definecolor{colorSep}{rgb}{0,0.5,0.5}
+		\definecolor{colorSep}{rgb}{0.8,0.8,0.8}
 	\newcommand{\hSep}{{\color{colorSep}\hrule}}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
@@ -136,7 +145,12 @@
 	\usepackage{cancel}
 	\usepackage{multicol}
 	\usepackage{enumerate}
-	
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V \xymatrix
 	\usepackage[all]{xy}
 		\CompileMatrices % \xymatrix
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
@@ -144,13 +158,14 @@
 
 
 
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V
+%\usepackage{pstricks, pst-node}
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
+
+
+
+
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V h-lib
-%\newcommand{\hDif}{\mathrm{d}}			% differential dx
-%\newcommand{\hDefined}[1]{\textcolor{darkred}{\textit{#1}}} % definition
-%\newcommand{\hDefinitionIFF}{\ensuremath{ \ \overset{\Delta}{\iff}} \ } % <-->
-%\newcommand{\hDefinitionEqual}{\ensuremath{ \ \triangleq} \ } % =
-%\newcommand{\hDefinitionEquiv}{\ensuremath{ \ \overset{\Delta}{\equiv}} \ } % =
-%
 \newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}} % definition
 \newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}} % <-->
 \newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }  % =
@@ -214,7 +229,7 @@
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \begin{multicols}{3} % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
-%	\setlength{\columnseprule}{0.25pt}
+	\setlength{\columnseprule}{0.25pt}
 	\setlength{\premulticols}{1pt}
 	\setlength{\postmulticols}{1pt}
 	\setlength{\multicolsep}{1pt}
@@ -244,7 +259,7 @@
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Extending
 \section{Extending \LaTeX}
 \label{sec:extending}
 
@@ -252,11 +267,12 @@
 	\newcommand{\mycmd}[1]{#1}}!
 	\operatorname*{myop}(x)
 \end{verbatim}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Extending
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Basics
 \section{Basics}
 \label{sec:basics}
 
@@ -301,11 +317,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Basics
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Cancellation
 \section{Cancellation}
 \label{sec:cancellation}
 
@@ -324,11 +341,12 @@
 	$\cancelto{\infty}{a b c \beta}$	&\verb!\cancelto{\infty}{a b c \beta}!\\	% req. cancel
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Cancellation
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Meta
 \section{Meta}
 \label{sec:meta}
 
@@ -347,11 +365,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Meta
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V More
 \section{More}
 
 \begin{tabular}{@{}ll@{}}
@@ -394,12 +413,16 @@
 %\renewcommand\d[1]{\mspace{6mu}\mathrm{d}#1\@ifnextchar\d{\mspace{-3mu}}{}}
 %\makeatother
 %	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V More
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Format Patterns}
 \section{Format Patterns}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
@@ -540,11 +563,12 @@
 	\end{verbatim}
 \end{multicols}
 \hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Format Patterns}
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Equations
 \section{Equations}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
@@ -581,7 +605,6 @@
 		\right|_{0}^{1}
 	\end{verbatim}
 \end{multicols}
-\hSep
 %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
 %\hSep
 %\begin{multicols}{2}
@@ -591,11 +614,13 @@
 %		aaa
 %	\end{verbatim}
 %\end{multicols}
+\hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Equations
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Spaces
 \section{Spaces}
 
 \begin{tabular}{@{}ll@{}}
@@ -606,11 +631,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Spaces
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Dots
 \section{Dots}
 
 \begin{tabular}{@{}ll@{}}
@@ -620,11 +646,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Dots
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Matrices
 \section{Matrices}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -665,9 +692,8 @@
 		}
 	\end{verbatim}
 \end{multicols}
-\hSep
-
 %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+%\hSep
 %\begin{multicols}{2}
 %	aaa
 %\columnbreak
@@ -675,11 +701,13 @@
 %	aaa
 %	\end{verbatim}
 %\end{multicols}
+\hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Matrices
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Logic
 \section{Logic}
 
 \begin{tabular}{@{}ll@{}}
@@ -708,11 +736,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Logic
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Set Theory
 \section{Set Theory}
 
 \begin{tabular}{@{}ll@{}}
@@ -744,7 +773,8 @@
 	$M_{\beta}$ 	~~= matrix of $\beta$	&\verb!aaa!\\
 	$f \colon A \to B$	~~= function	&\verb!f \colon A \to B!\\
 	$a \mapsto f(a)$~~= mapped to	&\verb!a \mapsto f(a)!\\
-	$f \upharpoonright C$	~~= restriction of $f$ to $C$	&\verb!f \upharpoonright C!\\
+	$f \upharpoonright C$	~~= restriction of $f$ to $C$	
+		&\verb!f \upharpoonright C!\\
 	$i_{A}$	~~= identity function of $A$	&\verb!i_{A}!\\
 %	$aaa$	&\verb!aaa!\\
 	$B^{A}$	~~= set of all functions	&\verb!B^{A}!\\
@@ -754,11 +784,12 @@
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Set Theory
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Algebraic Structures
 \section{Algebraic Structures}
 
 \begin{tabular}{@{}ll@{}}
@@ -766,11 +797,12 @@
 	$[A, \oplus, \otimes]$	&\verb![A, \oplus, \otimes]!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Algebraic Structures
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Number Theory
 \section{Number Theory}
 
 \begin{tabular}{@{}ll@{}}
@@ -797,11 +829,12 @@
 %	$aaa$ &\verb!aaa!\\
 %	$aaa$ &\verb!aaa!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Number Theory
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Combinatorics
 \section{Combinatorics}
 
 \begin{tabular}{@{}ll@{}}
@@ -817,233 +850,141 @@
 	$B_{n}$ = The $n$th Bell number	&\verb!B_{n}!\\
 	%=The number of partitions of an $n$-set. \\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Combinatorics
 
 
-%% =================
-%\section{psmatrix}
-%$ \begin{psmatrix}[mnode=circle,colsep=1cm,rowsep=.5cm]
-%	A \\
-%	& B\times_Z C & [mnode=oval] DDD \\
-%	& E & F
-%	\psset{arrows=->,nodesep=3pt}
-%	\everypsbox{\scriptstyle}
-%	\ncline{1,1}{2,2}_{y}
-%	\ncline[doubleline=true,linestyle=dashed]{-}{1,1}{2,3}^{x}
-%	\ncline[linestyle=dashed]{-}{2,2}{3,2}<{q}
-%	\ncline{2,2}{2,3}_{p}
-%	\ncarc[arcangle=40,border=3pt]{3,2}{1,1}
-%	_[npos=.3]{d}^[npos=.9]{e}
-%	\ncline[linestyle=dotted]{2,3}{3,3}>{f}
-%	\ncline{3,2}{3,3}^{g}
-%\end{psmatrix} $
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\section{ $h$ extensions}
+
+\begin{verbatim}
+	See the source of this document.
+\end{verbatim}
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hTags
+\subsection{$h$Tags}
+\label{sec:hTags}
+
 %\begin{verbatim}
-%\begin{psmatrix}[mnode=circle,colsep=1cm,rowsep=.5cm]
-%	A \\
-%	& B\times_Z C & [mnode=oval] DDD \\
-%	& E & F
-%	\psset{arrows=->,nodesep=3pt}
-%	\everypsbox{\scriptstyle}
-%	\ncline{1,1}{2,2}_{y}
-%	\ncline[doubleline=true,linestyle=dashed]{-}{1,1}{2,3}^{x}
-%	\ncline[linestyle=dashed]{-}{2,2}{3,2}<{q}
-%	\ncline{2,2}{2,3}_{p}
-%	\ncarc[arcangle=40,border=3pt]{3,2}{1,1}
-%	_[npos=.3]{d}^[npos=.9]{e}
-%	\ncline[linestyle=dotted]{2,3}{3,3}>{f}
-%	\ncline{3,2}{3,3}^{g}
-%\end{psmatrix} 
+%	\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}}
+%	\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}}
+%	\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }
+%	\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ }
 %\end{verbatim}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-%\begin{multicols}{2}
-%	\begin{hSolution}
-%		aa
-%	\end{hSolution}
-%
-%\columnbreak
-%	\begin{verbatim}
-%	\begin{hSolution}
-%	 aa
-%	\end{hSolution}
-%	\end{verbatim}
-%\end{multicols}
-%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-%\begin{multicols}{2}
-%	\begin{hNotation}
-%		aa
-%	\end{hNotation}
-%
-%\columnbreak
-%	\begin{verbatim}
-%	\begin{hNotation}
-%		aa
-%	\end{hNotation}
-%	\end{verbatim}
-%\end{multicols}
+
+\begin{tabular}{@{}ll@{}}
+	aa \hDed{dd} bb.	&\verb!aa \hDed{dd} bb.!\\
+	$x \hDiff  y$	&\verb!x \hDiff y!\\
+	$x \hDeq y$	&\verb!x \hDeq y!\\
+	$x \hDev y$	&\verb!x \hDev y!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hTags
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{Math Templates}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hPairs
+\subsection{$h$Pairs}
+\label{sec:pairs}
 
-\label{sec:templates}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{ax}
-		  aa 
-		  \label{ax:one}
-		\end{ax}
-\columnbreak
-	\begin{verbatim}
-		\begin{ax}
-		  aa
-		  \label{ax:one}
-		\end{ax}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{defn}
-		  aa \hDed{dd} bb.
-		  \label{def:aa}
-		\end{defn}
-\columnbreak
-	\begin{verbatim}
-		\begin{defn}
-		  aa \hDed{dd} bb.
-		  \label{def:aa}
-		\end{defn}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{thm}[Gauss]
-		  aa	
-		  \label{thm:gauss}
-		\end{thm}
-\columnbreak
-	\begin{verbatim}
-		\begin{thm}[Gauss]
-		  aa	
-		  \label{thm:gauss}
-		\end{thm}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{proof}
-		  aaa
-		\end{proof}
-\columnbreak
-	\begin{verbatim}
-		\begin{proof}
-		  aaa
-		\end{proof}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{lem}[Fermat]
-		  aa.
-		  \label{lem:fermat}
-		\end{lem}
-\columnbreak
-	\begin{verbatim}
-		\begin{lem}[Fermat]
-		  aa.
-		  \label{lem:fermat}
-		\end{lem}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{cor}
-		  aa
-		\end{cor}
-\columnbreak
-	\begin{verbatim}
-		\begin{cor}
-		  aa
-		\end{cor}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{prop}
-		  aa
-		\end{prop}
-\columnbreak
-	\begin{verbatim}
-		\begin{prop}
-		  aa
-		\end{prop}
-	\end{verbatim}
-\end{multicols}
-%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-%\begin{multicols}{2}
-%	\begin{lem}
-%		aa
-%	\end{lem}
-%\columnbreak
-%	\begin{verbatim}
-%	\begin{lem}
-%	 aa
-%	\end{lem}
-%	\end{verbatim}
-%\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{rem}
-		  aa
-		\end{rem}
-\columnbreak
-	\begin{verbatim}
-		\begin{rem}
-		  aa
-		\end{rem}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{notation}
-		  aa
-		\end{notation}
-\columnbreak
-	\begin{verbatim}
-		\begin{notation}
-		  aa
-		\end{notation}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{exmp}
-		  aa
-		\end{exmp}
-\columnbreak
-	\begin{verbatim}
-		\begin{exmp}
-		  aa
-		\end{exmp}
-	\end{verbatim}
-\end{multicols}
-\hSep
+%\begin{verbatim}
+%	\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert} 
+%	\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil}
+%	\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	$\hAbs{x}$	&\verb!\hAbs{x}!\\
+	$\hCeil{x}$	&\verb!\hCeil{x}!\\
+	$\hFloor{x}$	&\verb!\hFloor{x}!\\
+	$\| x \|$	&\verb!\| x \|!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hPairs
 
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{Environments}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Sets
+\subsection{$h$Sets}
+
+\begin{tabular}{@{}ll@{}}
+	\hSoN = The natural numbers	&\verb!\hSoN!\\
+	\hSoNp = Counting numbers	&\verb!\hSoNp!\\
+	\hSoZ = The integers	&\verb!\hSoZ!\\
+	\hSoZp = positive integers	&\verb!\hSoZp!\\
+	\hSoZn = negative integers	&\verb!\hSoZn! \\
+	\hSoZnn = nonnegative integers	&\verb!\hSoZnn!\\
+	\hSoZnz = nonzero integers	&\verb!\hSoZnz!\\
+	\hSoZnp = nonpositive integers	&\verb!\hSoZnp!\\
+	\hSoQ = The rational numbers	&\verb!\hSoQ!\\
+	\hSoQp = positive rational numbers	&\verb!\hSoQp!\\
+	\hSoQn = negative rational numbers	&\verb!\hSoQn!\\
+	\hSoQnn = nonnegative rationals	&\verb!\hSoQnn!\\
+	\hSoQnz = nonzero rationals	&\verb!\hSoQnz!\\
+	\hSoQnp = nonpositive rationals	&\verb!\hSoQnp!\\
+	\hSoR = The real numbers	&\verb!\hSoR!\\
+	\hSoRp = positive real numbers	&\verb!\hSoRp!\\
+	\hSoRn = negative real numbers	&\verb!\hSoRn!\\
+	\hSoRnn = nonnegative reals	&\verb!\hSoRnn!\\
+	\hSoRnz = nonzero reals	&\verb!\hSoRnz!\\
+	\hSoRnp = nonpositive reals	&\verb!\hSoRnp!\\
+	\hSoC = The complex numbers	&\verb!\hSoC!\\
+	\hSoCnz = nonzero complex numbers	&\verb!\hSoCnz!\\
+	\hSoPrimes = The set of Prime Numbers	&\verb!\hSoPrimes!\\
+	\hSoTruth	&\verb!\hSoTruth! \\
+	$\hSoBits = \{ 0, 1 \}$	&\verb!\hSoBits!\\
+	$\hSoSubsets{A}$	&\verb!\hSoSubsets{A}!\\
+	$\hSoPowerSet{A}$ = $\hSoSubsets{A}$= The set of all subsets	&\verb!\hSoPowerSet{A}! \\
+	$\hSoFunctions{A}{B}$=The set of all functions	&\verb!\hSoFunctions{A}{B}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Sets
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Labels References
+\subsection{Labels References}
+
+%\begin{verbatim}
+%	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
+%	\newcommand{\reftbl}[1]{Table~\ref{#1}}
+%	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
+%	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
+%	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
+%	\newcommand{\refdef}[1]{Definition~\ref{#1}}
+%	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	$\refdef{def:aa}$	&\verb!\refdef{def:aa}!\\
+	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}!\\
+	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}!\\
+	$\refsec{sec:templates}$	&\verb!\refsec{sec:templates}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Labels References
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Math Environments
+\section{Math Environments}
 
 \begin{tabular}{@{}ll@{}}
 	Axiom	&\verb!ax!\\
@@ -1065,11 +1006,239 @@
 %	Application	&\verb!hApplication!\\
 %	Summary	&\verb!hSummary!\\
 \end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Math Environments
+
+
+
+
+\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  V Environment Usage
+\section{Environment Usage}
+\label{sec:templates}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{ax}
+		  aaa
+		  \label{ax:one}
+		\end{ax}
+\columnbreak
+	\begin{verbatim}
+		\begin{ax}
+		  aaa
+		  \label{ax:one}
+		\end{ax}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{defn}
+		  aaa \hDed{ddd} bbb.
+		  \label{def:aa}
+		\end{defn}
+\columnbreak
+	\begin{verbatim}
+		\begin{defn}
+		  aaa \hDed{ddd} bbb.
+		  \label{def:aa}
+		\end{defn}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{thm}[Gauss]
+		  aaa
+		  \label{thm:gauss}
+		\end{thm}
+\columnbreak
+	\begin{verbatim}
+		\begin{thm}[Gauss]
+		  aaa
+		  \label{thm:gauss}
+		\end{thm}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{proof}
+		  aaa
+		\end{proof}
+\columnbreak
+	\begin{verbatim}
+		\begin{proof}
+		  aaa
+		\end{proof}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{lem}[Fermat]
+		  aaa
+		  \label{lem:fermat}
+		\end{lem}
+\columnbreak
+	\begin{verbatim}
+		\begin{lem}[Fermat]
+		  aaa
+		  \label{lem:fermat}
+		\end{lem}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{cor}
+		  aaa
+		\end{cor}
+\columnbreak
+	\begin{verbatim}
+		\begin{cor}
+		  aaa
+		\end{cor}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{prop}
+		  aaa
+		\end{prop}
+\columnbreak
+	\begin{verbatim}
+		\begin{prop}
+		  aaa
+		\end{prop}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{rem}
+		  aaa
+		\end{rem}
+\columnbreak
+	\begin{verbatim}
+		\begin{rem}
+		  aaa
+		\end{rem}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{notation}
+		  aaa
+		\end{notation}
+\columnbreak
+	\begin{verbatim}
+		\begin{notation}
+		  aaa
+		\end{notation}
+	\end{verbatim}
+\end{multicols}
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+%\hSep
+%\begin{multicols}{2}
+%		\begin{exmp}
+%		  aaa
+%		\end{exmp}
+%\columnbreak
+%	\begin{verbatim}
+%		\begin{exmp}
+%		  aaa
+%		\end{exmp}
+%	\end{verbatim}
+%\end{multicols}
+\hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  A Environment Usage
+
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V xymatrix
+\section{xymatrix}
+
+$
+	\xymatrix{
+	%
+	11
+	\POS[];
+	[d]**\dir{-};
+	[];[dr]**\dir{-};
+	\ar@/^/[r]^{\alpha_{1}} 
+	%
+	& 12
+	\ar@/^/[r]^{\alpha_{7}} 
+	\ar@/^/[l]^{\alpha_{3}} 
+	%
+	& 13
+	\ar@/^/[l]^{\alpha_{9}} 
+	\\
+	%
+	21
+	\ar@/^/[ur]^{\alpha_{5}}
+	\ar@/^/[u]^{\alpha_{4}}
+	\ar@/^/[urr]^{\alpha_{7}}
+	%
+	& \bullet
+	%
+	& 23
+	\ar@/^/[ll]^{\alpha_{8}}
+	\ar[u]^{9}
+	\ar[ul]^{9}
+	}
+$
+\begin{verbatim}
+	\xymatrix{
+	%
+	11
+	\POS[];
+	[d]**\dir{-};
+	[];[dr]**\dir{-};
+	\ar@/^/[r]^{\alpha_{1}} 
+	%
+	& 12
+	\ar@/^/[r]^{\alpha_{7}} 
+	\ar@/^/[l]^{\alpha_{3}} 
+	%
+	& 13
+	\ar@/^/[l]^{\alpha_{9}} 
+	\\
+	%
+	21
+	\ar@/^/[ur]^{\alpha_{5}}
+	\ar@/^/[u]^{\alpha_{4}}
+	\ar@/^/[urr]^{\alpha_{7}}
+	%
+	& \bullet
+	%
+	& 23
+	\ar@/^/[ll]^{\alpha_{8}}
+	\ar[u]^{9}
+	\ar[ul]^{9}
+	}
+\end{verbatim}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V xymatrix
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Lists
 \section{Lists}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -1135,222 +1304,7 @@
 	\end{verbatim}
 \end{multicols}
 \hSep
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-%\newpage
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{ $h$ extensions}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{$h$Sets}
-
-\begin{tabular}{@{}ll@{}}
-	\hSoN = The natural numbers	&\verb!\hSoN!\\
-	\hSoNp = Counting numbers	&\verb!\hSoNp!\\
-	\hSoZ = The integers	&\verb!\hSoZ!\\
-	\hSoZp = positive integers	&\verb!\hSoZp!\\
-	\hSoZn = negative integers	&\verb!\hSoZn! \\
-	\hSoZnn = nonnegative integers	&\verb!\hSoZnn!\\
-	\hSoZnz = nonzero integers	&\verb!\hSoZnz!\\
-	\hSoZnp = nonpositive integers	&\verb!\hSoZnp!\\
-	\hSoQ = The rational numbers	&\verb!\hSoQ!\\
-	\hSoQp = positive rational numbers	&\verb!\hSoQp!\\
-	\hSoQn = negative rational numbers	&\verb!\hSoQn!\\
-	\hSoQnn = nonnegative rationals	&\verb!\hSoQnn!\\
-	\hSoQnz = nonzero rationals	&\verb!\hSoQnz!\\
-	\hSoQnp = nonpositive rationals	&\verb!\hSoQnp!\\
-	\hSoR = The real numbers	&\verb!\hSoR!\\
-	\hSoRp = positive real numbers	&\verb!\hSoRp!\\
-	\hSoRn = negative real numbers	&\verb!\hSoRn!\\
-	\hSoRnn = nonnegative reals	&\verb!\hSoRnn!\\
-	\hSoRnz = nonzero reals	&\verb!\hSoRnz!\\
-	\hSoRnp = nonpositive reals	&\verb!\hSoRnp!\\
-	\hSoC = The complex numbers	&\verb!\hSoC!\\
-	\hSoCnz = nonzero complex numbers	&\verb!\hSoCnz!\\
-	\hSoPrimes = The set of Prime Numbers	&\verb!\hSoPrimes!\\
-	\hSoTruth	&\verb!\hSoTruth! \\
-	$\hSoBits = \{ 0, 1 \}$	&\verb!\hSoBits!\\
-	$\hSoSubsets{A}$	&\verb!\hSoSubsets{A}!\\
-	$\hSoPowerSet{A}$ = $\hSoSubsets{A}$= The set of all subsets	&\verb!\hSoPowerSet{A}! \\
-	$\hSoFunctions{A}{B}$=The set of all functions	&\verb!\hSoFunctions{A}{B}!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-%\end{multicols}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{Labels References}
-
-\begin{verbatim}
-	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
-	\newcommand{\reftbl}[1]{Table~\ref{#1}}
-	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
-	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
-	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
-	\newcommand{\refdef}[1]{Definition~\ref{#1}}
-	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
-\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	$\refdef{def:aa}$	&\verb!\refdef{def:aa}!\\
-	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}!\\
-	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}!\\
-	$\refsec{sec:templates}$	&\verb!\refsec{sec:templates}!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-
-%\begin{multicols}{2}
-%	This is how to reference to them.
-%	\refdef{def:aa}, 
-%	\refthm{thm:gauss},
-%	\reflem{lem:fermat}, and
-%	\refsec{sec:templates}.
-%\columnbreak
-%	\begin{verbatim}
-%		This is how reference to them.
-%		\refdef{def:aa}, 
-%		\refthm{thm:gauss},
-%		\reflem{lem:aa}, and
-%		\refsec{sec:templates}.
-%	\end{verbatim}
-%\end{multicols}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{$h$Tags}
-\label{sec:hTags}
-
-\begin{verbatim}
-	\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}}
-	\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}}
-	\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }
-	\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ }
-\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	aa \hDed{dd} bb.	&\verb!aa \hDed{dd} bb.!\\
-	$x \hDiff  y$	&\verb!x \hDiff y!\\
-	$x \hDeq y$	&\verb!x \hDeq y!\\
-	$x \hDev y$	&\verb!x \hDev y!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{$h$Pairs}
-\label{sec:pairs}
-
-\begin{verbatim}
-	\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert} 
-	\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil}
-	\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}
-\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	$\hAbs{x}$	&\verb!\hAbs{x}!\\
-	$\hCeil{x}$	&\verb!\hCeil{x}!\\
-	$\hFloor{x}$	&\verb!\hFloor{x}!\\
-	$\| x \|$	&\verb!\| x \|!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-%\newpage
-\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{xymatrix}
-
-$
-	\xymatrix{
-	%
-	11
-	\POS[];
-	[d]**\dir{-};
-	[];[dr]**\dir{-};
-	\ar@/^/[r]^{\alpha_{1}} 
-	%
-	& 12
-	\ar@/^/[r]^{\alpha_{7}} 
-	\ar@/^/[l]^{\alpha_{3}} 
-	%
-	& 13
-	\ar@/^/[l]^{\alpha_{9}} 
-	\\
-	%
-	21
-	\ar@/^/[ur]^{\alpha_{5}}
-	\ar@/^/[u]^{\alpha_{4}}
-	\ar@/^/[urr]^{\alpha_{7}}
-	%
-	& \bullet
-	%
-	& 23
-	\ar@/^/[ll]^{\alpha_{8}}
-	\ar[u]^{9}
-	\ar[ul]^{9}
-	}
-$
-\begin{verbatim}
-	\xymatrix{
-	%
-	11
-	\POS[];
-	[d]**\dir{-};
-	[];[dr]**\dir{-};
-	\ar@/^/[r]^{\alpha_{1}} 
-	%
-	& 12
-	\ar@/^/[r]^{\alpha_{7}} 
-	\ar@/^/[l]^{\alpha_{3}} 
-	%
-	& 13
-	\ar@/^/[l]^{\alpha_{9}} 
-	\\
-	%
-	21
-	\ar@/^/[ur]^{\alpha_{5}}
-	\ar@/^/[u]^{\alpha_{4}}
-	\ar@/^/[urr]^{\alpha_{7}}
-	%
-	& \bullet
-	%
-	& 23
-	\ar@/^/[ll]^{\alpha_{8}}
-	\ar[u]^{9}
-	\ar[ul]^{9}
-	}
-\end{verbatim}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Lists
 
 
 
