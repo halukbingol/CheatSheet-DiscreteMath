@@ -264,7 +264,7 @@
 \label{sec:extending}
 
 \begin{verbatim}
-	\newcommand{\mycmd}[1]{#1}}!
+	\newcommand{\mycmd}[1]{#1}}
 	\operatorname*{myop}(x)
 \end{verbatim}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Extending
@@ -624,11 +624,11 @@
 \section{Spaces}
 
 \begin{tabular}{@{}ll@{}}
-	$a\,a$	&\verb!a\,a!\\
-	$a\:a$	&\verb!a\:a!\\
-	$a\ a$	&\verb!a\ a!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
+	$a\!a$	&\verb!a\!a! negative\\
+	$a\,a$	&\verb!a\,a! thin\\
+	$a\:a$	&\verb!a\:a! medium\\
+	$a\;a$	&\verb!a\;a! thick\\
+	$a\ a$	&\verb!a\ a! ?\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Spaces
