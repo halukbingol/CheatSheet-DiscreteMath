@@ -1,14 +1,5 @@
 \documentclass[a4paper,10pt,landscape]{article}
 
-%	\usepackage{etex}  % prevent counter errors
-
-
-	\usepackage[iso]{datetime}
-	\newcommand{\hbTimeStamp}{{\color{red}v\today T\currenttime}} % 
-
-	\usepackage[colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]%
-		{hyperref}
-
 
 
 
@@ -35,27 +26,20 @@
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V page setup
 	\pagestyle{empty}
 	
-	\setlength{\oddsidemargin}{0.25in}
-	\setlength{\evensidemargin}{0.5in}
-	\setlength{\textwidth}{10in}
+	\setlength{\oddsidemargin}{-1cm}
+	\setlength{\evensidemargin}{-1cm}
+	\setlength{\textwidth}{27cm}
+	\setlength{\textheight}{18.5cm}
+	
+	\setlength{\topmargin}{-1cm}
+	\setlength{\headheight}{0cm}
+	\setlength{\headsep}{0cm}
 	
 	
-	\setlength{\topmargin}{-0.75in}
-	\setlength{\textheight}{7.25in}
-	\setlength{\headheight}{0in}
-	\setlength{\headsep}{0in}
 	
-	
-	
-	 
 	
 	% Redefine section commands to use less space
 	\makeatletter
@@ -85,6 +69,28 @@
 	\setlength{\parskip}{0pt plus 0.5ex}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V title part
+	\usepackage[iso]{datetime}
+	\newcommand{\hbTimeStamp}{{\color{red}v\today T\currenttime}} % 
+
+	\usepackage[colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]%
+		{hyperref}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V color
+	\usepackage{color}
+		\definecolor{darkred}{rgb}{0.8,0.1,0.1}
+%		\definecolor{darkgreen}{rgb}{0,0.5,0}
+%		\definecolor{darkblue}{rgb}{0,0,0.5}
+		\definecolor{colorSep}{rgb}{0,0.5,0.5}
+	\newcommand{\hSep}{{\color{colorSep}\hrule}}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
 
 
@@ -131,11 +137,6 @@
 	\usepackage{multicol}
 	\usepackage{enumerate}
 	
-	\usepackage{color}
-		\definecolor{darkred}{rgb}{0.8,0.1,0.1}
-		\definecolor{darkgreen}{rgb}{0,0.5,0}
-		\definecolor{darkblue}{rgb}{0,0,0.5}
-	
 	\usepackage[all]{xy}
 		\CompileMatrices % \xymatrix
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
@@ -144,14 +145,21 @@
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V h-lib
-\newcommand{\hDif}{\mathrm{d}}			% differential dx
-\newcommand{\hDefined}[1]{\textcolor{darkred}{\textit{#1}}} % definition
-\newcommand{\hDefinitionIFF}{\ensuremath{ \ \overset{\Delta}{\longleftrightarrow}} \ } % <-->
-\newcommand{\hDefinitionEqual}{\ensuremath{ \ \triangleq} \ } % =
-\newcommand{\hDefinitionEquiv}{\ensuremath{ \ \overset{\Delta}{\equiv}} \ } % =
-\newcommand{\hAbs}[1]{\ensuremath{\left \lvert \, #1 \, \right \rvert} } % |x|
-\newcommand{\hCeil}[1]	{\ensuremath{\lceil  \, #1 \,  \rceil }} % ceil(x)
-\newcommand{\hFloor}[1]	{\ensuremath{\lfloor  \, #1 \,  \rfloor }} % floor(x)
+%\newcommand{\hDif}{\mathrm{d}}			% differential dx
+%\newcommand{\hDefined}[1]{\textcolor{darkred}{\textit{#1}}} % definition
+%\newcommand{\hDefinitionIFF}{\ensuremath{ \ \overset{\Delta}{\iff}} \ } % <-->
+%\newcommand{\hDefinitionEqual}{\ensuremath{ \ \triangleq} \ } % =
+%\newcommand{\hDefinitionEquiv}{\ensuremath{ \ \overset{\Delta}{\equiv}} \ } % =
+%
+\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}} % definition
+\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}} % <-->
+\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }  % =
+\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ } % =
+%
+\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert}  % |x|
+\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil} % ceil(x)
+\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}% floor(x)
+
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
 
@@ -193,20 +201,29 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
 
-% -----------------------------------------------------------------------
 
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \begin{document}
 
 \raggedright
 \footnotesize
 
-\begin{multicols}{3}
-	%\setlength{\columnseprule}{0.25pt}
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\begin{multicols}{3} % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+%	\setlength{\columnseprule}{0.25pt}
 	\setlength{\premulticols}{1pt}
 	\setlength{\postmulticols}{1pt}
 	\setlength{\multicolsep}{1pt}
 	\setlength{\columnsep}{2pt}
 
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V title
 \begin{center}
 	\Large{\textbf{A Cheat Sheet for Discrete Math}}\\
 	Haluk O. Bingol\\
@@ -222,6 +239,19 @@
 	}\\
 	\small{\hbTimeStamp}
 \end{center}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\section{Extending \LaTeX}
+\label{sec:extending}
+
+\begin{verbatim}
+	\newcommand{\mycmd}[1]{#1}}!
+	\operatorname*{myop}(x)
+\end{verbatim}
 
 
 
@@ -231,7 +261,7 @@
 \label{sec:basics}
 
 \begin{tabular}{@{}ll@{}}
-	$\mathbf{a}$	&\verb!\mathbf{a}!\\
+	$a, \mathbf{a}$	&\verb!a, \mathbf{a}!\\
 	$\Phi, \boldsymbol{\Phi}$	&\verb!\Phi, \boldsymbol{\Phi}!\\
 	$a^{ij}$	&\verb!a^{ij}!\\
 	$a_{ij}$	&\verb!a_{ij}!\\
@@ -247,19 +277,28 @@
 	$\lceil a \rceil$ (\refsec{sec:pairs})	&\verb!\lceil a \rceil!\\
 	$\lfloor a \rfloor$ (\refsec{sec:pairs})	&\verb!\lfloor a \rfloor!\\
 	%
+	[2pt]
 	$\overline{ab}$	&\verb!\overline{ab}!\\
 	$\underline{ab}$	&\verb!\underline{ab}!\\
+	[2pt]
 	$\overrightarrow{AB}$	&\verb!\overrightarrow{AB}!\\
+	[2pt]
 	$\overleftarrow{AB}$	&\verb!\overleftarrow{AB}!\\
+	[2pt]
 	$\widetilde{ab}$	&\verb!\widetilde{ab}!\\
+	[2pt]
 	$\overbrace{a_{1} \cdots a_{k}}^{k}$	&\verb!\overbrace{a_{1} \cdots a_{k}}^{k}!\\
+	[2pt]
 	$\underbrace{a_{1} \cdots a_{k}}_{k}$	&\verb!\underbrace{a_{1} \cdots a_{k}}_{k}!\\
-	$\operatorname*{function}(x)$	&\verb!\operatorname*{function}(x)!\\
-	$M^{\top}$	&\verb!M^{\top}!\\
+	[2pt]
+	$M^{\top}$	~~= transpose	&\verb!M^{\top}!\\
 	$\ell_{\bot}$	&\verb!\ell_{\bot}!\\
 	$\ell_{\parallel}$	&\verb!\ell_{\parallel}!\\
 %	$\underbracket{x}_{\text{real}}$	&\verb!aaa!\\
 %	$\underbrace{x}_\text{real}$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
 
@@ -269,6 +308,10 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \section{Cancellation}
 \label{sec:cancellation}
+
+\begin{verbatim}
+	\usepackage{cancel}
+\end{verbatim}
 
 \begin{tabular}{@{}ll@{}}
 	$a \neq b$	&\verb!a \neq b!\\
@@ -290,13 +333,17 @@
 \label{sec:meta}
 
 \begin{tabular}{@{}ll@{}}
+	$x \implies y$	&\verb!x \implies y!\\
+	$x \impliedby y$	&\verb!x \impliedby y!\\
+	$x \iff y$	&\verb!x \iff y!\\
 	$x \Longrightarrow y$	&\verb!x \Longrightarrow y!\\
 	$x \Longleftarrow y$	&\verb!x \Longleftarrow y!\\
-	$x \iff y$	&\verb!x \iff y!\\
 	$a \triangleq b$	&\verb!a \triangleq b!\\
 	$a \overset{\triangle}{\equiv} b$	&\verb!a \overset{\triangle}{\equiv} b!\\
-	$a \overset{\triangle}{\longleftrightarrow} b$	&\verb!a \overset{\triangle}{\longleftrightarrow} b!\\
 	$a \overset{\triangle}{\iff} b$	&\verb!a \overset{\triangle}{\iff} b!\\
+	$a \overset{\triangle}{\longleftrightarrow} b$
+		&\verb!a \overset{\triangle}{\longleftrightarrow} b!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
@@ -310,43 +357,39 @@
 \begin{tabular}{@{}ll@{}}
 	%
 	$\sideset{_{a}^{b}}{_{c}^{d}} \sum$	
-	&\verb!\sideset{_{a}^{b}}{_{c}^{d}} \sum!\\
+		&\verb!\sideset{_{a}^{b}}{_{c}^{d}} \sum!\\[2pt]
 	%
-	$\overset{abc}{xyz}$	
-	&\verb!\overset{abc}{xyz}!\\
+	$\overset{ab}{xyz}$	
+		&\verb!\overset{ab}{xyz}!\\[2pt]
 	%
 	$\underset{i}{\arg \, \min} \, \{ a_{i} \}$	
-	&\verb!\underset{i}{\arg \, \min} \, \{ a_{i} \}!\\
+		&\verb!\underset{i}{\arg \, \min} \, \{ a_{i} \}!\\
 	%
 	$\underset{a}{\arg \, \max} \, f(a)$	
-	&\verb!\underset{a}{\arg \, \max} \, f(a)!\\
+		&\verb!\underset{a}{\arg \, \max} \, f(a)!\\[2pt]
 	%
-	$\frac{a}{b}$	
-	&\verb!\frac{a}{b}!\\
+	$\frac{a}{b}$	&\verb!\frac{a}{b}!\\[2pt]
 	%
-	$\tfrac{a}{b}$	
-	&\verb!\tfrac{a}{b}!\\
+	$\tfrac{a}{b}$	&\verb!\tfrac{a}{b}!\\[2pt]
 	%
-	$\sum_{i = 0}^{5} i$	
-	&\verb!\sum_{i = 0}^{5} i!\\
+	$\sum_{i = 0}^{5} i$	&\verb!\sum_{i = 0}^{5} i!\\[2pt]
 	%
-	$\prod_{i = 0}^{5} i$	
-	&\verb!\prod_{i = 0}^{5} i!\\
+	$\prod_{i = 0}^{5} i$	&\verb!\prod_{i = 0}^{5} i!\\[2pt]
 	%
 	$\lim_{a \to \infty} x$	
-	&\verb!\lim_{a \to \infty} x!\\
+		&\verb!\lim_{a \to \infty} x!\\[2pt]
 	%
-		  $\frac{\hDif f(x)}{\hDif x}$	
-	&\verb!\frac{\hDif f(x)}{\hDif x}!\\
+	$\frac{\mathrm{d} f(x)}{\mathrm{d} x}$	
+		&\verb!\frac{\mathrm{d} f(x)}{\mathrm{d} x}!\\[2pt]
 	%
 	$a + \mathrm{i}\, b$
-	&\verb~a + \mathrm{i}\, b~\\
+		&\verb~a + \mathrm{i}\, b~\\[2pt]
 	%
-		  $\int_{a}^{b} \! f(x) \, \hDif x$	
-	&\verb~\int_{a}^{b} \! f(x) \, \hDif x~\\
+	$\int_{a}^{b} \! f(x) \, \mathrm{d} x$	
+		&\verb~\int_{a}^{b} \! f(x) \, \mathrm{d} x~\\[2pt]
 	%
 	$\left[\frac{\infty}{\infty}\right]$ 
-	&\verb~\left[\frac{\infty}{\infty}\right]~\\
+		&\verb~\left[\frac{\infty}{\infty}\right]~\\
 %\makeatletter
 %\renewcommand\d[1]{\mspace{6mu}\mathrm{d}#1\@ifnextchar\d{\mspace{-3mu}}{}}
 %\makeatother
@@ -359,7 +402,7 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \section{Format Patterns}
 
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
 %\begin{tabular}{@{}ll@{}}
 %	a
 %	\begin{tabular}{|l|}
@@ -376,80 +419,113 @@
 %!\\
 %\end{tabular}\\
 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	a
-	\begin{tabular}{|l|}
-		b \\
-		c
-	\end{tabular}
-	d.\\
+		a
+		\begin{tabular}{|l|}
+		  bb \\
+		  cc
+		\end{tabular}
+		d.
 \columnbreak
 	\begin{verbatim}
 		a
 		\begin{tabular}{|l|}
-			  b \\
-			  c
+		  bb \\
+		  cc
 		\end{tabular}
 		d.
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	 ${\genfrac(]{0pt}{2}{a+b}{c+d+e}}$
+	 $
+		{\genfrac(]{0pt}{2}
+		  {a+b}
+		  {c+d+e}
+		}
+	 $
 \columnbreak
 	\begin{verbatim}
-		 ${\genfrac(]{0pt}{2}
-		 {a+b}
-		 {c+d+e}}$
+		{\genfrac(]{0pt}{2}
+		  {a+b}
+		  {c+d+e}
+		}
 	\end{verbatim}
 \end{multicols}
-
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	$a = 
-	\begin{cases}
-		1, & n \text{ is odd}, \\
-		0, & \text{otherwise}.
-	\end{cases}$
-\columnbreak
-	\begin{verbatim}
-	$a = 
-	\begin{cases}
+	$
+		a = 
+		\begin{cases}
 		  1, & n \text{ is odd}, \\
 		  0, & \text{otherwise}.
-	\end{cases}$
-	\end{verbatim}
-\end{multicols}
-% ----------------------------
-\begin{multicols}{2}
-	\[\sum_{\substack{k \in \hSoZ\\ 7 < k \\ k \leq 4}} a(k).\]
+		\end{cases}
+	$
 \columnbreak
 	\begin{verbatim}
-	  $\sum_{
-	      \substack{
-	        k \in \hSoZ\\ 
-	        7 < k \\ 
-	        k \leq 4
-	      }
-	    } 
-	    a(k).$
+		a = 
+		\begin{cases}
+		  1, & n \text{ is odd}, \\
+		  0, & \text{otherwise}.
+		\end{cases}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\[n! = \underbrace{1 \cdot 2 \cdot \dotso \cdot n}_{n}.\]
+	\[
+		\sum_{
+		  \substack{
+		    k \in \hSoZ\\ 
+		    7 < k \\ 
+		    k \leq 4
+		  }
+		} 
+		a_{k}.
+	\]
 \columnbreak
 	\begin{verbatim}
-		n! = \underbrace{
-		         1 
-		         \cdot 2 
-		         \cdot 
-		         \dotso 
-		         \cdot n
-		      }_{n}.
+		\sum_{
+		  \substack{
+		    k \in \hSoZ\\ 
+		    7 < k \\ 
+		    k \leq 4
+		  }
+		} 
+		a_{k}.
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+	\[
+		n! = 
+		\underbrace{
+		  1
+		  \cdot 2 
+		  \cdot 
+		  \dotso 
+		  \cdot n
+		}_{n}
+	\]
+\columnbreak
+	\begin{verbatim}
+		n! = 
+		\underbrace{
+		  1
+		  \cdot 2 
+		  \cdot 
+		  \dotso 
+		  \cdot n
+		}_{n}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
 		\begin{align*}
 			aaa &= b+b+b &// ccc\\
@@ -463,6 +539,7 @@
 		\end{align*}
 	\end{verbatim}
 \end{multicols}
+\hSep
 
 
 
@@ -470,39 +547,43 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \section{Equations}
 
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
 	\begin{align*}
-		1 + (2 + 3)
-		& = 1 + 5\\
-		& = 6\\
-		& = 12/2.
+	  1 + (2 + 3)
+	  & = 1 + 5\\
+	  & = 6\\
+	  & = 12/2.
 	\end{align*}
 \columnbreak
 	\begin{verbatim}
 	\begin{align*}
-		1 + (2 + 3)
-		& = 1 + 5\\
-		& = 6\\
-		& = 12/2.
+	  1 + (2 + 3)
+	  & = 1 + 5\\
+	  & = 6\\
+	  & = 12/2.
 	\end{align*}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
 	\[
 		\left.
-			\frac{x^{2}}{3}
+		  \frac{x^{2}}{3}
 		\right|_{0}^{1}
 	\]
 \columnbreak
 	\begin{verbatim}
 		\left.
-			 \frac{x^{2}}{3}
+		  \frac{x^{2}}{3}
 		\right|_{0}^{1}
 	\end{verbatim}
 \end{multicols}
-%% ----------------------------
+\hSep
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+%\hSep
 %\begin{multicols}{2}
 %	aaa
 %\columnbreak
@@ -515,49 +596,78 @@
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\section{Spaces}
+
+\begin{tabular}{@{}ll@{}}
+	$a\,a$	&\verb!a\,a!\\
+	$a\:a$	&\verb!a\:a!\\
+	$a\ a$	&\verb!a\ a!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \section{Dots}
 
 \begin{tabular}{@{}ll@{}}
 	$1 \cdot 2 \cdot 3$ (multiplication) & \verb!$1 \cdot 2 \cdot 3$!\\
 	$1, 2, \dotsc, 9$ (comma) & \verb!$1, 2, \dotsc, 9$!\\
 	$1 + 2 + \dotso + 9$ (operator) & \verb!$1 + 2 + \dotso + 9$!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 \end{tabular}
-% ---
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\section{Matrices}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
 \begin{multicols}{2}
 	\[
-%	 A =
-	 \begin{pmatrix}
-	  a_{1,1} & \cdots & a_{1,n}\\
-	  \vdots  & \ddots & \vdots \\
-	  a_{m,1} & \cdots & a_{m,n}
-	 \end{pmatrix}
+		\begin{pmatrix}
+		  a_{1,1} & \cdots & a_{1,n}\\
+		  \vdots  & \ddots & \vdots\\
+		  a_{m,1} & \cdots & a_{m,n}
+		\end{pmatrix}
 	\]
 \columnbreak
 	\begin{verbatim}
-		$\begin{pmatrix}
-		  a_{1,1} &\cdots &a_{1,n} \\
-		  \vdots  &\ddots &\vdots  \\
-		  a_{m,1} &\cdots &a_{m,n}
-		 \end{pmatrix}$
+		\begin{pmatrix}
+		  a_{1,1} & \cdots & a_{1,n}\\
+		  \vdots  & \ddots & \vdots\\
+		  a_{m,1} & \cdots & a_{m,n}
+		\end{pmatrix}
 	\end{verbatim}
 \end{multicols}
-% ---
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
 \begin{multicols}{2}
-\[
-M = \bordermatrix{~ & x & y \cr
-                  A & 1 & 2 \cr
-                  B & 3 & 4 \cr}
-\]
+	\[
+		\bordermatrix{
+		  ~ & x & y \cr
+		  A & 1 & 2 \cr
+		  B & 3 & 4 \cr
+		}
+	\]
 \columnbreak
 	\begin{verbatim}
-	$M = \bordermatrix{~ & x & y \cr
-                  A & 1 & 2 \cr
-                  B & 3 & 4 \cr}
-	$
+		\bordermatrix{
+		  ~ & x & y \cr
+		  A & 1 & 2 \cr
+		  B & 3 & 4 \cr
+		}
 	\end{verbatim}
 \end{multicols}
+\hSep
 
-%% ---
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 %\begin{multicols}{2}
 %	aaa
 %\columnbreak
@@ -573,6 +683,10 @@ M = \bordermatrix{~ & x & y \cr
 \section{Logic}
 
 \begin{tabular}{@{}ll@{}}
+	$p \implies  q$	&\verb!p \implies  q!\\
+	$p \impliedby  q$	&\verb!p \impliedby  q!\\
+	$p \iff  q$	&\verb!p \iff  q!\\
+	%
 	$\overline{p}$	&\verb!\overline{p}!\\
 	$\neg p$	&\verb!\neg p!\\
 	$p \land q$	&\verb!p \land q!\\
@@ -581,22 +695,17 @@ M = \bordermatrix{~ & x & y \cr
 	$p \rightarrow q$	&\verb!p \rightarrow q!\\
 	$p \leftrightarrow q$	&\verb!p \leftrightarrow q!\\
 	$p \equiv q$	&\verb!p \equiv q!\\
-%--
-%	$p \hAnd q$	&\verb!p \hAnd q!\\
-%	$p \hOr q$	&\verb!p \hOr q!\\
+	%
 	$p \longrightarrow q$	&\verb!p \longrightarrow q!\\
 	$p \longleftrightarrow q$	&\verb!p \longleftrightarrow q!\\
-	$p \Longrightarrow  q$	&\verb!p \Longrightarrow  q!\\
-	$p \Longleftrightarrow  q$	&\verb!p \Longleftrightarrow  q!\\
-	$p \iff  q$	&\verb!p \iff  q!\\
-	$p \implies  q$	&\verb!p \implies  q!\\
-	$p \impliedby  q$	&\verb!p \impliedby  q!\\
-\end{tabular}
-\begin{tabular}{@{}ll@{}}
+%	$p \Longrightarrow  q$	&\verb!p \Longrightarrow  q!\\
+%	$p \Longleftrightarrow  q$	&\verb!p \Longleftrightarrow  q!\\
 	$\forall x \in A \ P(x)$	&\verb!\forall x \in A \ P(x)!\\
 	$\not \forall x \in A \ P(x)$	&\verb!\not \forall x \in A \ P(x)!\\
 	$\exists x \in A \ P(x)$	&\verb!\exists x \in A \ P(x)!\\
 	$\not \exists x \in A \ P(x)$	&\verb!\not \exists x \in A \ P(x)!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
 
@@ -618,28 +727,29 @@ M = \bordermatrix{~ & x & y \cr
 	$A \not\subset B$	&\verb!A \not\subset B!\\
 	$A \subseteq B$	&\verb!A \subseteq B!\\
 	$A \not\subseteq B$	&\verb!A \not\subseteq B!\\
-	$2^{A}$	&\verb!2^{A}!\\
-	$\lvert A \rvert$ (\refsec{sec:pairs})	&\verb!\lvert A \rvert!\\
+	$2^{A}$ 	~~= power set of $A$	&\verb!2^{A}!\\
+	$\mathcal{P}(A)$ 	~~= power set of $A$	&\verb!\mathcal{P}(A)!\\
+	$\lvert A \rvert$  	~~= cardinality of $A$ (\refsec{sec:pairs})	&\verb!\lvert A \rvert!\\
 	$A \cup B$	&\verb!A \cup B!\\
 	$A \cap B$	&\verb!A \cap B!\\
-	$A \smallsetminus B$	&\verb!A \smallsetminus B!\\
-	$A \times B$	&\verb!A \times B!\\
-	$(a, b)$	&\verb!(a, b)!\\
+	$A \smallsetminus B$	~~= set difference	&\verb!A \smallsetminus B!\\
+	$A \times B$  	~~= Cartesian product	&\verb!A \times B!\\
+	$(a, b)$ 	~~= ordered pair	&\verb!(a, b)!\\
 %	
-	$\overline{A}$	&\verb!\overline{A}!\\
-	$f^{-1}$	&\verb!f^{-1}!\\
-	$f \circ g$	&\verb!f \circ g!\\
-	$a \, \beta \, b$	&\verb!a \, \beta \, b!\\
-	$a \, \cancel{\beta} \, b$	&\verb!a \, \cancel{\beta} \, b!\\
-%	$\hFunction{f}{A}{B}$	&\verb!\hFunction{f}{A}{B}!\\
-	$f \colon A \to B$	&\verb!f \colon A \to B!\\
-	$a \mapsto f(a)$	&\verb!a \mapsto f(a)!\\
-	$f \upharpoonright C$	 (restriction of $f$ to C)	&\verb!f \upharpoonright C!\\
-	$i_{A}$	&\verb!i_{A}!\\
+	$\overline{A}$	~~= complement of $A$	&\verb!\overline{A}!\\
+	$f^{-1}$	~~= inverse	&\verb!f^{-1}!\\
+	$f \circ g$	~~= composition	&\verb!f \circ g!\\
+	$a \, \beta \, b$ 	~~= relation	&\verb!a \, \beta \, b!\\
+	$a \, \cancel{\beta} \, b$	&\verb!a \,\cancel{\beta} \,b!\\
+	$M_{\beta}$ 	~~= matrix of $\beta$	&\verb!aaa!\\
+	$f \colon A \to B$	~~= function	&\verb!f \colon A \to B!\\
+	$a \mapsto f(a)$~~= mapped to	&\verb!a \mapsto f(a)!\\
+	$f \upharpoonright C$	~~= restriction of $f$ to $C$	&\verb!f \upharpoonright C!\\
+	$i_{A}$	~~= identity function of $A$	&\verb!i_{A}!\\
 %	$aaa$	&\verb!aaa!\\
-	$B^{A}$	&\verb!B^{A}!\\
-	$\mathcal{P}(A)$	&\verb!\mathcal{P}(A)!\\
+	$B^{A}$	~~= set of all functions	&\verb!B^{A}!\\
 	$\mathbb{A}$	&\verb!\mathbb{A}!\\
+	$\mathcal{A}$	&\verb!\mathcal{A}!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
@@ -670,20 +780,21 @@ M = \bordermatrix{~ & x & y \cr
 	$x \mid y$ &\verb!x \mid y!\\
 	$x \nmid y$ &\verb!x \nmid y!\\
 	$x \bot y$ &\verb!x \bot y!\\
-	$x \mathrm{div} y$ &\verb!x  \mathrm{div} y!\\
-	$\log_{2} x$ &\verb!\log_{2} x!\\
+	$x \perp y$	&\verb!x \perp y!\\
+	$x \ \mathrm{div} \ y$ &\verb!x \ \mathrm{div} \ y!\\
+	$x \ \mathrm{rem} \ y$ &\verb!x \ \mathrm{rem} \ y!\\
+	$\log_{2} x$ &\verb!\log_{2} x!\\[2pt]
 %	$H_{2} x$ &\verb!H_{2} x!\\
 %	$\hBinaryEntropy$ &\verb!\hBinaryEntropy!\\
-	$\sum_{i=1}^{n} a_{i}$ &\verb!\sum_{i=1}^{n} a_{i}!\\
-	$\prod_{i=1}^{n} a_{i}$ &\verb!\prod_{i=1}^{n} a_{i}!\\
-	$\frac{x}{y}$ &\verb!\frac{x}{y}!\\
+	$\sum_{i=1}^{n} a_{i}$ &\verb!\sum_{i=1}^{n} a_{I}!\\[2pt]
+	$\prod_{i=1}^{n} a_{i}$ &\verb!\prod_{i=1}^{n} a_{I}!\\[2pt]
+	$\frac{x}{y}$ &\verb!\frac{x}{y}!\\[2pt]
 	$\sqrt[n]{x}$ &\verb!\sqrt[n]{x}!\\
 	$a \bmod b$ &\verb!a \bmod b!\\
 	$0 \equiv 3 \pmod{3}$ &\verb!0 \equiv 3 \pmod{3}!\\
 	$0 \equiv 3 \mod{3}$  &\verb!0 \equiv 3 \mod{3}!\\
 	$0 \equiv 3 \pod{3}$ &\verb!0 \equiv 3 \pod{3}!\\
-	$a \perp a$	&\verb!a \perp a!\\
-	$a \bot b$ &\verb!a \bot b!\\
+%	$aaa$ &\verb!aaa!\\
 %	$aaa$ &\verb!aaa!\\
 \end{tabular}
 
@@ -697,9 +808,10 @@ M = \bordermatrix{~ & x & y \cr
 	$n! = n$ factorial	&\verb!n!!\\[2pt]
 	$n^{\overline{r}}$ = $n$ to the $r$ rising	&\verb!n^{\overline{r}}!\\[2pt]
 	$n^{\underline{r}}$ = $n$ to the $r$ falling	&\verb!n^{\underline{r}}!\\[2pt]
-	${n \choose r}$ = $n$ choose $r$	&\verb!{n \choose r}!\\[4pt]
-	${n \brack r}$ = Stirling cycle number	&\verb!{n \brack r}!\\[4pt]
-	${n \brace r}$ = Stirling subset number &\verb!{n \brace r}!\\[3pt]
+	$\binom{n}{r}$ = $n$ choose $r$	&\verb!\binom{n}{r}!\\[2pt]
+	${n \choose r}$ = $n$ choose $r$	&\verb!{n \choose r}!\\[2pt]
+	${n \brack r}$ = Stirling cycle number	&\verb!{n \brack r}!\\[2pt]
+	${n \brace r}$ = Stirling subset number &\verb!{n \brace r}!\\[2pt]
 	$S(n, k)$ = Stirling number	&\verb!S(n, k)!\\
 	%=The number of partitions of an $n$-set into exactly $k$ nonempty subsets. \\
 	$B_{n}$ = The $n$th Bell number	&\verb!B_{n}!\\
@@ -741,7 +853,7 @@ M = \bordermatrix{~ & x & y \cr
 %	\ncline{3,2}{3,3}^{g}
 %\end{psmatrix} 
 %\end{verbatim}
-% ---
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 %\begin{multicols}{2}
 %	\begin{hSolution}
 %		aa
@@ -754,7 +866,7 @@ M = \bordermatrix{~ & x & y \cr
 %	\end{hSolution}
 %	\end{verbatim}
 %\end{multicols}
-%% ---
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 %\begin{multicols}{2}
 %	\begin{hNotation}
 %		aa
@@ -775,106 +887,106 @@ M = \bordermatrix{~ & x & y \cr
 \section{Math Templates}
 
 \label{sec:templates}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{ax}
-		aa 
-	\end{ax}
+		\begin{ax}
+		  aa 
+		  \label{ax:one}
+		\end{ax}
 \columnbreak
 	\begin{verbatim}
-	\begin{ax}
-		aa 
-	\end{ax}
+		\begin{ax}
+		  aa
+		  \label{ax:one}
+		\end{ax}
 	\end{verbatim}
 \end{multicols}
-
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{defn}
-		aa \hDefined{dd} aa.
-		\label{def:aa}
-	\end{defn}
+		\begin{defn}
+		  aa \hDed{dd} bb.
+		  \label{def:aa}
+		\end{defn}
 \columnbreak
 	\begin{verbatim}
 		\begin{defn}
-			Aaaa
-			\label{def:aa}
+		  aa \hDed{dd} bb.
+		  \label{def:aa}
 		\end{defn}
 	\end{verbatim}
 \end{multicols}
-
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{thm}[Gauss]
-		aa	
-		\label{thm:gauss}
-	\end{thm}
+		\begin{thm}[Gauss]
+		  aa	
+		  \label{thm:gauss}
+		\end{thm}
 \columnbreak
 	\begin{verbatim}
-	\begin{thm}[Gauss]
-		aa	
-		\label{thm:gauss}
-	\end{thm}
+		\begin{thm}[Gauss]
+		  aa	
+		  \label{thm:gauss}
+		\end{thm}
 	\end{verbatim}
 \end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-%	\begin{proof}[\refthm{thm:gauss}]
-	\begin{proof}
-		aaa
-	\end{proof}
-\columnbreak
-	\begin{verbatim}
-	\begin{proof}
-	 aaa
-	\end{proof}
-	\end{verbatim}
-\end{multicols}
-
-% ----------------------------
-\begin{multicols}{2}
-	\begin{lem}[Fermat]
-		aa.
-		\label{lem:fermat}
 		\begin{proof}
-			aaa.
+		  aaa
 		\end{proof}
-	\end{lem}
+\columnbreak
+	\begin{verbatim}
+		\begin{proof}
+		  aaa
+		\end{proof}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{lem}[Fermat]
+		  aa.
+		  \label{lem:fermat}
+		\end{lem}
 \columnbreak
 	\begin{verbatim}
 		\begin{lem}[Fermat]
-			aa.
-			\label{lem:fermat}
-			\begin{proof}
-				aaa.
-			\end{proof}
+		  aa.
+		  \label{lem:fermat}
 		\end{lem}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{cor}
-		aa
-	\end{cor}
+		\begin{cor}
+		  aa
+		\end{cor}
 \columnbreak
 	\begin{verbatim}
-	\begin{cor}
-	 aa
-	\end{cor}
+		\begin{cor}
+		  aa
+		\end{cor}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{prop}
-		aa
-	\end{prop}
+		\begin{prop}
+		  aa
+		\end{prop}
 \columnbreak
 	\begin{verbatim}
-	\begin{prop}
-	 aa
-	\end{prop}
+		\begin{prop}
+		  aa
+		\end{prop}
 	\end{verbatim}
 \end{multicols}
-%% ----------------------------
+%% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
 %\begin{multicols}{2}
 %	\begin{lem}
 %		aa
@@ -886,42 +998,46 @@ M = \bordermatrix{~ & x & y \cr
 %	\end{lem}
 %	\end{verbatim}
 %\end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{rem}
-		aa
-	\end{rem}
+		\begin{rem}
+		  aa
+		\end{rem}
 \columnbreak
 	\begin{verbatim}
-	\begin{rem}
-	 aa
-	\end{rem}
+		\begin{rem}
+		  aa
+		\end{rem}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{notation}
-		aa
-	\end{notation}
+		\begin{notation}
+		  aa
+		\end{notation}
 \columnbreak
 	\begin{verbatim}
-	\begin{notation}
-	 aa
-	\end{notation}
+		\begin{notation}
+		  aa
+		\end{notation}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{exmp}
-		aa
-	\end{exmp}
+		\begin{exmp}
+		  aa
+		\end{exmp}
 \columnbreak
 	\begin{verbatim}
 		\begin{exmp}
-		 aa
+		  aa
 		\end{exmp}
 	\end{verbatim}
 \end{multicols}
+\hSep
 
 
 
@@ -959,79 +1075,84 @@ M = \bordermatrix{~ & x & y \cr
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \verb!\usepackage{enumerate}!
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
 \begin{multicols}{2}
-	\begin{itemize}
-		\item aa
-		\item bb
-	\end{itemize}
+		\begin{itemize}
+		  \item aa
+		  \item bb
+		\end{itemize}
 \columnbreak
 	\begin{verbatim}
-	\begin{itemize}
-		\item aa
-		\item bb
-	\end{itemize}
+		\begin{itemize}
+		  \item aa
+		  \item bb
+		\end{itemize}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{enumerate}
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}
+		  \item aa
+		  \item bb
+		\end{enumerate}
 \columnbreak
 	\begin{verbatim}
-	\begin{enumerate}
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}
+		  \item aa
+		  \item bb
+		\end{enumerate}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{enumerate}[i)]
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}[i)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
 \columnbreak
 	\begin{verbatim}
-	\begin{enumerate}[i)]
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}[i)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
 	\end{verbatim}
 \end{multicols}
-% ----------------------------
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
 \begin{multicols}{2}
-	\begin{enumerate}[a)]
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}[a)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
 \columnbreak
 	\begin{verbatim}
-	\begin{enumerate}[a)]
-		\item aa
-		\item bb
-	\end{enumerate}
+		\begin{enumerate}[a)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
 	\end{verbatim}
 \end{multicols}
+\hSep
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\newpage
+%\newpage
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{my extensions}
+\section{ $h$ extensions}
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{hSets}
+\subsection{$h$Sets}
 
 \begin{tabular}{@{}ll@{}}
 	\hSoN = The natural numbers	&\verb!\hSoN!\\
@@ -1067,7 +1188,7 @@ M = \bordermatrix{~ & x & y \cr
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
-\end{multicols}
+%\end{multicols}
 
 
 
@@ -1084,38 +1205,54 @@ M = \bordermatrix{~ & x & y \cr
 	\newcommand{\refdef}[1]{Definition~\ref{#1}}
 	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
 \end{verbatim}
-\begin{multicols}{2}
-	This is how to reference to them.
-	\refdef{def:aa}, 
-	\refthm{thm:gauss}	,
-	\reflem{lem:fermat}, and
-	\refsec{sec:templates}.
-\columnbreak
-	\begin{verbatim}
-		This is how reference to them.
-		\refdef{def:aa}, 
-		\refthm{thm:gauss},
-		\reflem{lem:aa}, and
-		\refsec{sec:templates}.
-	\end{verbatim}
-\end{multicols}
+
+\begin{tabular}{@{}ll@{}}
+	$\refdef{def:aa}$	&\verb!\refdef{def:aa}!\\
+	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}!\\
+	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}!\\
+	$\refsec{sec:templates}$	&\verb!\refsec{sec:templates}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+
+%\begin{multicols}{2}
+%	This is how to reference to them.
+%	\refdef{def:aa}, 
+%	\refthm{thm:gauss},
+%	\reflem{lem:fermat}, and
+%	\refsec{sec:templates}.
+%\columnbreak
+%	\begin{verbatim}
+%		This is how reference to them.
+%		\refdef{def:aa}, 
+%		\refthm{thm:gauss},
+%		\reflem{lem:aa}, and
+%		\refsec{sec:templates}.
+%	\end{verbatim}
+%\end{multicols}
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{hTags}
-
+\subsection{$h$Tags}
 \label{sec:hTags}
 
+\begin{verbatim}
+	\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}}
+	\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}}
+	\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }
+	\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ }
+\end{verbatim}
+
 \begin{tabular}{@{}ll@{}}
-%	$ new line$	&\verb!\hNewLine!\\
-	$\hDefined{x}$	&\verb!\hDefined{x}!\\
-%	$\hDefinedC{x}$	&\verb!\hDefinedC{x}!\\
-%	$\hDefinedN{x}$	&\verb!\hDefinedN{x}!\\
-	$x \hDefinitionIFF  y$	&\verb!\hDefinitionIFF!\\
-	$x \hDefinitionEqual y$	&\verb!\hDefinitionEqual!\\
-	$x \hDefinitionEquiv y$	&\verb!\hDefinitionEquiv!\\
+	aa \hDed{dd} bb.	&\verb!aa \hDed{dd} bb.!\\
+	$x \hDiff  y$	&\verb!x \hDiff y!\\
+	$x \hDeq y$	&\verb!x \hDeq y!\\
+	$x \hDev y$	&\verb!x \hDev y!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
 
@@ -1123,28 +1260,31 @@ M = \bordermatrix{~ & x & y \cr
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\subsection{hPairs}
-
+\subsection{$h$Pairs}
 \label{sec:pairs}
 
+\begin{verbatim}
+	\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert} 
+	\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil}
+	\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}
+\end{verbatim}
+
 \begin{tabular}{@{}ll@{}}
-%	$\hAbs{x}$	&\verb!\hAbs{x}!\\
 	$\hAbs{x}$	&\verb!\hAbs{x}!\\
-%	$\hPairingBraket{x}$	&\verb!\hPairingBraket{x}!\\
-%	$\hPairingParan{x}$	&\verb!\hPairingParan{x}!\\
-%	$\hPairingCurly{x}$	&\verb!\hPairingCurly{x}!\\
 	$\hCeil{x}$	&\verb!\hCeil{x}!\\
 	$\hFloor{x}$	&\verb!\hFloor{x}!\\
 	$\| x \|$	&\verb!\| x \|!\\
 %	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 \end{tabular}
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\newpage
-
+%\newpage
+\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
 
 
 
@@ -1153,54 +1293,71 @@ M = \bordermatrix{~ & x & y \cr
 
 $
 	\xymatrix{
-	  11
-		\POS[];
-		[d]**\dir{-};
-		[];[dr]**\dir{-};
+	%
+	11
+	\POS[];
+	[d]**\dir{-};
+	[];[dr]**\dir{-};
 	\ar@/^/[r]^{\alpha_{1}} 
+	%
 	& 12
 	\ar@/^/[r]^{\alpha_{7}} 
 	\ar@/^/[l]^{\alpha_{3}} 
+	%
 	& 13
-	  \ar@/^/[l]^{\alpha_{9}} 
+	\ar@/^/[l]^{\alpha_{9}} 
 	\\
-	  21
-	  \ar@/^/[ur]^{\alpha_{5}}
-	  \ar@/^/[u]^{\alpha_{4}}
-	  \ar@/^/[urr]^{\alpha_{7}}
+	%
+	21
+	\ar@/^/[ur]^{\alpha_{5}}
+	\ar@/^/[u]^{\alpha_{4}}
+	\ar@/^/[urr]^{\alpha_{7}}
+	%
 	& \bullet
+	%
 	& 23
-	  \ar@/^/[ll]^{\alpha_{8}}
-	  \ar[u]^{9}
-	  \ar[ul]^{9}
+	\ar@/^/[ll]^{\alpha_{8}}
+	\ar[u]^{9}
+	\ar[ul]^{9}
 	}
 $
 \begin{verbatim}
-$
 	\xymatrix{
-	  11
-		\POS[];
-		[d]**\dir{-};
-		[];[dr]**\dir{-};
+	%
+	11
+	\POS[];
+	[d]**\dir{-};
+	[];[dr]**\dir{-};
 	\ar@/^/[r]^{\alpha_{1}} 
+	%
 	& 12
 	\ar@/^/[r]^{\alpha_{7}} 
 	\ar@/^/[l]^{\alpha_{3}} 
+	%
 	& 13
-	  \ar@/^/[l]^{\alpha_{9}} 
+	\ar@/^/[l]^{\alpha_{9}} 
 	\\
-	  21
-	  \ar@/^/[ur]^{\alpha_{5}}
-	  \ar@/^/[u]^{\alpha_{4}}
-	  \ar@/^/[urr]^{\alpha_{7}}
+	%
+	21
+	\ar@/^/[ur]^{\alpha_{5}}
+	\ar@/^/[u]^{\alpha_{4}}
+	\ar@/^/[urr]^{\alpha_{7}}
+	%
 	& \bullet
+	%
 	& 23
-	  \ar@/^/[ll]^{\alpha_{8}}
-	  \ar[u]^{9}
-	  \ar[ul]^{9}
+	\ar@/^/[ll]^{\alpha_{8}}
+	\ar[u]^{9}
+	\ar[ul]^{9}
 	}
-$
 \end{verbatim}
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\end{multicols} % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+
 
 
 
