@@ -621,7 +621,7 @@
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Spaces
-\section{Spaces}
+\section{Spaces in Math mode}
 
 \begin{tabular}{@{}ll@{}}
 	$a\!a$	&\verb!a\!a! negative\\
@@ -629,6 +629,10 @@
 	$a\:a$	&\verb!a\:a! medium\\
 	$a\;a$	&\verb!a\;a! thick\\
 	$a\ a$	&\verb!a\ a! ?\\
+	$a\quad a$	&\verb!a\quad a!\\
+	$a\qquad a$	&\verb!a\qquad a!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Spaces
@@ -1309,12 +1313,45 @@ $
 
 
 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Math mode
+\section{Math mode}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+		inline: $aaa$  or \(aaa\) bbb\\
+\columnbreak
+	\begin{verbatim}
+		inline: 
+		$
+		  aaa
+		$  
+		or 
+		\(
+		  aaa
+		\) 
+		bbb
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+		display: \[ aaa\] bbb
+\columnbreak
+	\begin{verbatim}
+		display: 
+		\[
+		  aaa
+		\] 
+		bbb
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
+
+
+
+
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \end{multicols} % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
-
-
-
-
-
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \end{document}
