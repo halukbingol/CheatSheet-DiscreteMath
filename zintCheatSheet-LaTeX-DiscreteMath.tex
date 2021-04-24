@@ -541,49 +541,6 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
 \hSep
 \begin{multicols}{2}
-		\begin{align*}
-			aaa &= b+b+b &// ccc\\
-			d &= e+e &// fff
-		\end{align*}
-\columnbreak
-	\begin{verbatim}
-		\begin{align*}
-			aaa &= b+b+b &// ccc\\
-			d &= e+e &// fff
-		\end{align*}
-	\end{verbatim}
-\end{multicols}
-\hSep
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Format Patterns}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Equations
-\section{Equations}
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-	\begin{align*}
-	  1 + (2 + 3)
-	  & = 1 + 5\\
-	  & = 6\\
-	  & = 12/2.
-	\end{align*}
-\columnbreak
-	\begin{verbatim}
-	\begin{align*}
-	  1 + (2 + 3)
-	  & = 1 + 5\\
-	  & = 6\\
-	  & = 12/2.
-	\end{align*}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
 	\[
 		\left.
 		  \frac{x^{2}}{3}
@@ -594,6 +551,75 @@
 		\left.
 		  \frac{x^{2}}{3}
 		\right|_{0}^{1}
+	\end{verbatim}
+\end{multicols}
+\hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Format Patterns}
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Equations
+\section{Equations}
+\label{sec:equations}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+	\begin{align} % no *
+	  1 + (2 + 3)
+	  & = 1 + 5
+	  	  \label{eq:equationA}\\
+	  & = 6
+	  	  \label{eq:equationB}\\
+	  & = 12/2.
+	  	  \label{eq:equationC}
+	\end{align}
+\columnbreak
+	\begin{verbatim}
+	\begin{align} % no *
+	  1 + (2 + 3)
+	  & = 1 + 5
+	    \label{eq:equationA}\\
+	  & = 6
+	    \label{eq:equationB}\\
+	  & = 12/2.
+	    \label{eq:equationC}
+	\end{align}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+	\begin{align*} % with *
+	  1 + (2 + 3)
+	  & = 1 + 5\\
+	  & = 6\\
+	  & = 12/2.
+	\end{align*}
+\columnbreak
+	\begin{verbatim}
+	\begin{align*} % with *
+	  1 + (2 + 3)
+	  & = 1 + 5\\
+	  & = 6\\
+	  & = 12/2.
+	\end{align*}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{align*}
+		  aaa &= b+b+b &// \text{ccc}\\
+		  d &= e+e &//\text{fff}
+		\end{align*}
+\columnbreak
+	\begin{verbatim}
+		\begin{align*}
+		  aaa &= b+b+b &// \text{ccc}\\
+		  d &= e+e &//\text{fff}
+		\end{align*}
 	\end{verbatim}
 \end{multicols}
 %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
@@ -653,6 +679,7 @@
 \hSep
 \begin{multicols}{2}
 	\[
+		\mathbf{A} = 
 		\begin{pmatrix}
 		  a_{1,1} & \cdots & a_{1,n}\\
 		  \vdots  & \ddots & \vdots\\
@@ -661,6 +688,7 @@
 	\]
 \columnbreak
 	\begin{verbatim}
+		\mathbf{A} = 
 		\begin{pmatrix}
 		  a_{1,1} & \cdots & a_{1,n}\\
 		  \vdots  & \ddots & \vdots\\
@@ -704,6 +732,7 @@
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Logic
 \section{Logic}
+\label{sec:logic}
 
 \begin{tabular}{@{}ll@{}}
 	$p \implies  q$	&\verb!p \implies  q!\\
@@ -951,29 +980,52 @@
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Labels References
-\subsection{Labels References}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Math mode
+\section{Math mode}
 
-%\begin{verbatim}
-%	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
-%	\newcommand{\reftbl}[1]{Table~\ref{#1}}
-%	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
-%	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
-%	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
-%	\newcommand{\refdef}[1]{Definition~\ref{#1}}
-%	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
-%\end{verbatim}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+		inline: 
+		$
+		  aaa
+		$  
+		or 
+		\(
+		  aaa
+		\) 
+		bbb
+\columnbreak
+	\begin{verbatim}
+		inline: 
+		$
+		  aaa
+		$  
+		or 
+		\(
+		  aaa
+		\) 
+		bbb
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+		display: \[ aaa\] bbb
+\columnbreak
+	\begin{verbatim}
+		display: 
+		\[
+		  aaa
+		\] 
+		bbb
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
-\begin{tabular}{@{}ll@{}}
-	$\refdef{def:aa}$	&\verb!\refdef{def:aa}!\\
-	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}!\\
-	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}!\\
-	$\refsec{sec:templates}$	&\verb!\refsec{sec:templates}!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Labels References
+
+
+\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
 
 
 
@@ -1006,14 +1058,14 @@
 
 
 
-\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+%\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
 
 
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  V Environment Usage
 \section{Environment Usage}
-\label{sec:templates}
+\label{sec:environments}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
 \hSep
@@ -1160,8 +1212,8 @@
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+%\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+%\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
 
 
 
@@ -1229,6 +1281,11 @@ $
 	}
 \end{verbatim}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V xymatrix
+
+
+
+
+\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
 
 
 
@@ -1304,39 +1361,80 @@ $
 
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Math mode
-\section{Math mode}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Labels References
+\subsection{Labels and References}
+
+%\begin{verbatim}
+%	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
+%	\newcommand{\reftbl}[1]{Table~\ref{#1}}
+%	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
+%	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
+%	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
+%	\newcommand{\refdef}[1]{Definition~\ref{#1}}
+%	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	$\refsec{sec:logic}$	&\verb!\refsec{sec:logic}! See \refsec{sec:logic}\\
+	$\refeq{eq:equationA}$	&\verb!\refeq{eq:equationA}! See \refsec{sec:equations}\\
+	$\refeq{eq:equationB}$	&\verb!\refeq{eq:equationB}! See \refsec{sec:equations}\\
+	$\refeq{eq:equationC}$	&\verb!\refeq{eq:equationC}! See \refsec{sec:equations}\\
+	$\refdef{def:aa}$	&\verb!\refdef{def:aa}! See \refsec{sec:environments}\\
+	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}! See \refsec{sec:environments}\\
+	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}! See \refsec{sec:environments}\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Labels References
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V
+\section{Citation and BibTeX}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \hSep
 \begin{multicols}{2}
-		inline: $aaa$  or \(aaa\) bbb\\
+		Aaa~\cite{%
+		  knuth1984texbook,%
+		  lamport1994latex%
+		}
+		bbb.
 \columnbreak
 	\begin{verbatim}
-		inline: 
-		$
-		  aaa
-		$  
-		or 
-		\(
-		  aaa
-		\) 
-		bbb
+		Aaa~\cite{%
+		  knuth1984texbook,%
+		  lamport1994latex%
+		}
+		bbb.
 	\end{verbatim}
 \end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+%
 \hSep
 \begin{multicols}{2}
-		display: \[ aaa\] bbb
+%		\bibliographystyle{ieeetr}
+%		\bibliography{b=BibTeXfile}
+	~
 \columnbreak
 	\begin{verbatim}
-		display: 
-		\[
-		  aaa
-		\] 
-		bbb
+		\bibliographystyle{ieeetr}
+		\bibliography{b=BibTeXfile}
 	\end{verbatim}
 \end{multicols}
+
+
+\begin{thebibliography}{1}
+
+\bibitem{knuth1984texbook}
+D.~E. Knuth, {\em The TeXbook}.
+\newblock Addison-Wesley, 1984.
+
+\bibitem{lamport1994latex}
+L.~Lamport, {\em LaTeX: A document preparation system}.
+\newblock Addison-Wesley, 1994.
+
+\end{thebibliography}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A
 
 
