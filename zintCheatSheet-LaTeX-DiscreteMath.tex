@@ -166,6 +166,8 @@
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V h-lib
+\newcommand{\hDesc}[1]{\textcolor{darkred}{(#1)}} % description
+%
 \newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}} % definition
 \newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}} % <-->
 \newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }  % =
@@ -268,19 +270,24 @@
 \label{sec:basics}
 
 \begin{tabular}{@{}ll@{}}
-	$a, \mathbf{a}$	&\verb!a, \mathbf{a}!\\
-	$\Phi, \boldsymbol{\Phi}$	&\verb!\Phi, \boldsymbol{\Phi}!\\
+	$A, \mathbf{A}$	&\verb!A, \mathbf{A}!\\
+	$\mathbb{A}, \mathcal{A}, \mathfrak{A}$	&\verb!\mathbb{A}, \mathcal{A}, \mathfrak{A}!\\
+	$\mathtt{A}, \mathrm{A}, \mathsf{A}$	&\verb!\mathtt{A}, \mathrm{A}, \mathsf{A}!\\
+	$\Phi, \boldsymbol{\Phi}, \varPhi$	&\verb!\Phi, \boldsymbol{\Phi}, \varPhi!\\
 	$a^{ij}$	&\verb!a^{ij}!\\
 	$a_{ij}$	&\verb!a_{ij}!\\
 	$a_{i}^{j}$	&\verb!a_{i}^{j}!\\
 	${}_{k}^{l}a_{i}^{j}$	&\verb!{}_{k}^{l}a_{i}^{j}!\\
 %	$\head x$	&\verb!\dot x!\\
 	$\bar x$	&\verb!\bar x!\\
+	$\hat x$	&\verb!\hat x!\\
 	$\vec x$	&\verb!\vec x!\\
 	$\dot x$	&\verb!\dot x!\\
+	$\ddot x$	&\verb!\ddot x!\\
 	$\tilde{a}$	&\verb!\tilde{a}!\\
 	%
 	$\lvert a \rvert$ (\refsec{sec:pairs})	&\verb!\lvert a \rvert!\\
+	$\lVert a \rVert$ (\refsec{sec:pairs})	&\verb!\lVert a \rVert!\\
 	$\lceil a \rceil$ (\refsec{sec:pairs})	&\verb!\lceil a \rceil!\\
 	$\lfloor a \rfloor$ (\refsec{sec:pairs})	&\verb!\lfloor a \rfloor!\\
 	%
@@ -298,7 +305,7 @@
 	[2pt]
 	$\underbrace{a_{1} \cdots a_{k}}_{k}$	&\verb!\underbrace{a_{1} \cdots a_{k}}_{k}!\\
 	[2pt]
-	$M^{\top}$	~~= transpose	&\verb!M^{\top}!\\
+	$M^{\top}$	\hDesc{transpose}	&\verb!M^{\top}!\\
 	$\ell_{\bot}$	&\verb!\ell_{\bot}!\\
 	$\ell_{\parallel}$	&\verb!\ell_{\parallel}!\\
 %	$\underbracket{x}_{\text{real}}$	&\verb!aaa!\\
@@ -641,11 +648,11 @@
 \section{Spaces in Math mode}
 
 \begin{tabular}{@{}ll@{}}
-	$a\!a$	&\verb!a\!a! negative\\
-	$a\,a$	&\verb!a\,a! thin\\
-	$a\:a$	&\verb!a\:a! medium\\
-	$a\;a$	&\verb!a\;a! thick\\
-	$a\ a$	&\verb!a\ a! ?\\
+	$a\!a$	&\verb!a\!a!	\hDesc{negative}\\
+	$a\,a$	&\verb!a\,a!	\hDesc{thin}\\
+	$a\:a$	&\verb!a\:a!	\hDesc{medium}\\
+	$a\;a$	&\verb!a\;a!	\hDesc{thick}\\
+	$a\ a$	&\verb!a\ a!	\hDesc{?}\\
 	$a\quad a$	&\verb!a\quad a!\\
 	$a\qquad a$	&\verb!a\qquad a!\\
 %	$aaa$	&\verb!aaa!\\
@@ -661,9 +668,11 @@
 \section{Dots}
 
 \begin{tabular}{@{}ll@{}}
-	$1 \cdot 2 \cdot 3$ (multiplication) & \verb!$1 \cdot 2 \cdot 3$!\\
-	$1, 2, \dotsc, 9$ (comma) & \verb!$1, 2, \dotsc, 9$!\\
-	$1 + 2 + \dotso + 9$ (operator) & \verb!$1 + 2 + \dotso + 9$!\\
+	$1 \cdot 2 \cdot 3$	\hDesc{multiplication} & \verb!$1 \cdot 2 \cdot 3$!\\
+	$1, 2, \dotsc, 9$	\hDesc{comma} & \verb!$1, 2, \dotsc, 9$!\\
+	$1 + 2 + \dotsb + 9$	\hDesc{binary operator} & \verb!$1 + 2 + \dotsb + 9$!\\
+	$1 \cdot 2 \dotsm 9$	\hDesc{multiplication} & \verb!$1 \cdot 2 \dotsm 9$!\\
+	$1 \dotso 9$ (other) & \verb!$1 \dotso 9$!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 \end{tabular}
@@ -671,28 +680,75 @@
 
 
 
-
+\newpage
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Matrices
 \section{Matrices}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \hSep
+\begin{tabular}{@{}ll@{}}
+	$\mathbf{A} \in \mathbb{R}^{m \times n}$	&\verb!\mathbf{A} \in \mathbb{R}^{m \times n}!\\
+	$m \times n$	&\verb!m \times n!\\
+	$\mathbf{x}$, $x_{i}$	\hDesc{vector, entry}	&\verb!\mathbf{x}, x_{i}!\\
+	$\mathbf{A}$, $a_{i j}$	\hDesc{matrix, entry}	&\verb!\mathbf{A}, a_{i j}!\\
+	$\mathbf{x}^{\top}$	\hDesc{transpose}	&\verb!\mathbf{x}^{\top}!\\
+	$\mathbf{0}$, $\mathbf{1}$	\hDesc{zero, one matrix}	&\verb!\mathbf{0}, \mathbf{1}!\\
+	$\lVert \mathbf{x} \rVert_{1}$	\hDesc{1-norm}	&\verb!\lVert \mathbf{x} \rVert_{1}!\\
+	$\lvert \mathbf{x} \rvert$	\hDesc{determinant}	&\verb!\lvert \mathbf{x} \rvert!\\
+	$\det \mathbf{A}$	\hDesc{determinant}		&\verb!\det \mathbf{A}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
 \begin{multicols}{2}
 	\[
-		\mathbf{A} = 
+		\bordermatrix{
+		  ~ & x & y \cr
+		  A & 1 & 2 \cr
+		  B & 3 & 4 \cr
+		}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\bordermatrix{
+		  ~ & x & y \cr
+		  A & 1 & 2 \cr
+		  B & 3 & 4 \cr
+		}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\[
+		\begin{matrix}  
+		  a & b\\
+		  c & d\\
+		\end{matrix}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\begin{matrix}  
+		  a & b\\
+		  c & d\\
+		\end{matrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\[
 		\begin{pmatrix}
-		  a_{1,1} & \cdots & a_{1,n}\\
-		  \vdots  & \ddots & \vdots\\
-		  a_{m,1} & \cdots & a_{m,n}
+			  a & b\\
+			  c & d\\
 		\end{pmatrix}
 	\]
 \columnbreak
 	\begin{verbatim}
-		\mathbf{A} = 
 		\begin{pmatrix}
-		  a_{1,1} & \cdots & a_{1,n}\\
-		  \vdots  & \ddots & \vdots\\
-		  a_{m,1} & \cdots & a_{m,n}
+			  a & b\\
+			  c & d\\
 		\end{pmatrix}
 	\end{verbatim}
 \end{multicols}
@@ -700,19 +756,116 @@
 \hSep
 \begin{multicols}{2}
 	\[
-		\bordermatrix{
-		  ~ & x & y \cr
-		  A & 1 & 2 \cr
-		  B & 3 & 4 \cr
-		}
+		\begin{bmatrix}
+			  a & b\\
+			  c & d\\
+		\end{bmatrix}
 	\]
 \columnbreak
 	\begin{verbatim}
-		\bordermatrix{
-		  ~ & x & y \cr
-		  A & 1 & 2 \cr
-		  B & 3 & 4 \cr
-		}
+		\begin{bmatrix}
+			  a & b\\
+			  c & d\\
+		\end{bmatrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\[
+		\begin{Bmatrix}
+			  a & b\\
+			  c & d\\
+		\end{Bmatrix}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\begin{Bmatrix}
+			  a & b\\
+			  c & d\\
+		\end{Bmatrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\[
+		\begin{vmatrix}
+			  a & b\\
+			  c & d\\
+		\end{vmatrix}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\begin{vmatrix}
+			  a & b\\
+			  c & d\\
+		\end{vmatrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\[
+		\begin{Vmatrix}
+			  a & b\\
+			  c & d\\
+		\end{Vmatrix}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\begin{Vmatrix}
+			  a & b\\
+			  c & d\\
+		\end{Vmatrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\hDesc{dots}
+	\[
+		\mathbf{A} = 
+		\begin{bmatrix}
+		  a_{1,1} & \cdots & a_{1,n}\\
+		  \vdots  & \ddots & \vdots\\
+		  a_{m,1} & \cdots & a_{m,n}
+		\end{bmatrix}
+	\]
+\columnbreak
+	\begin{verbatim}
+		\mathbf{A} = 
+		\begin{bmatrix}
+		  a_{1,1} & \cdots & a_{1,n}\\
+		  \vdots  & \ddots & \vdots\\
+		  a_{m,1} & \cdots & a_{m,n}
+		\end{bmatrix}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+	\hDesc{partition}
+	\[
+		M =
+		\left[
+		\begin{array}{c|c}
+			A & B \\
+			\hline
+			C & D
+		\end{array}
+		\right]
+	\]
+\columnbreak
+	\begin{verbatim}
+		M =
+		\left[
+		  \begin{array}{c|c}
+			    A & B \\
+			    \hline
+			    C & D
+		  \end{array}
+		\right]
 	\end{verbatim}
 \end{multicols}
 %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -780,30 +933,30 @@
 	$A \not\subset B$	&\verb!A \not\subset B!\\
 	$A \subseteq B$	&\verb!A \subseteq B!\\
 	$A \not\subseteq B$	&\verb!A \not\subseteq B!\\
-	$2^{A}$ 	~~= power set of $A$	&\verb!2^{A}!\\
-	$\mathcal{P}(A)$ 	~~= power set of $A$	&\verb!\mathcal{P}(A)!\\
-	$\lvert A \rvert$  	~~= cardinality of $A$ (\refsec{sec:pairs})	&\verb!\lvert A \rvert!\\
+	$2^{A}$ 	\hDesc{power set of $A$}	&\verb!2^{A}!\\
+	$\mathcal{P}(A)$ 	\hDesc{power set of $A$}	&\verb!\mathcal{P}(A)!\\
+	$\lvert A \rvert$  	\hDesc{cardinality of $A$} (\refsec{sec:pairs})	&\verb!\lvert A \rvert!\\
 	$A \cup B$	&\verb!A \cup B!\\
 	$A \cap B$	&\verb!A \cap B!\\
-	$A \smallsetminus B$	~~= set difference	&\verb!A \smallsetminus B!\\
-	$A \times B$  	~~= Cartesian product	&\verb!A \times B!\\
-	$(a, b)$ 	~~= ordered pair	&\verb!(a, b)!\\
+	$A \smallsetminus B$	\hDesc{set difference}	&\verb!A \smallsetminus B!\\
+	$A \times B$  	\hDesc{Cartesian product}	&\verb!A \times B!\\
+	$(a, b)$ 	\hDesc{ordered pair}	&\verb!(a, b)!\\
 %	
-	$\overline{A}$	~~= complement of $A$	&\verb!\overline{A}!\\
-	$f^{-1}$	~~= inverse	&\verb!f^{-1}!\\
-	$f \circ g$	~~= composition	&\verb!f \circ g!\\
-	$a \, \beta \, b$ 	~~= relation	&\verb!a \, \beta \, b!\\
+	$\overline{A}$	\hDesc{complement of $A$}	&\verb!\overline{A}!\\
+	$f^{-1}$	\hDesc{inverse}	&\verb!f^{-1}!\\
+	$f \circ g$	\hDesc{composition}	&\verb!f \circ g!\\
+	$a \, \beta \, b$ 	\hDesc{relation}	&\verb!a \, \beta \, b!\\
 	$a \, \cancel{\beta} \, b$	&\verb!a \,\cancel{\beta} \,b!\\
-	$M_{\beta}$ 	~~= matrix of $\beta$	&\verb!aaa!\\
-	$f \colon A \to B$	~~= function	&\verb!f \colon A \to B!\\
-	$a \mapsto f(a)$~~= mapped to	&\verb!a \mapsto f(a)!\\
-	$f \upharpoonright C$	~~= restriction of $f$ to $C$	
+	$M_{\beta}$ 	\hDesc{matrix of $\beta$}	&\verb!aaa!\\
+	$f \colon A \to B$	\hDesc{function}	&\verb!f \colon A \to B!\\
+	$a \mapsto f(a)$	\hDesc{mapped to}	&\verb!a \mapsto f(a)!\\
+	$f \upharpoonright C$	\hDesc{restriction of $f$ to $C$}	
 		&\verb!f \upharpoonright C!\\
-	$i_{A}$	~~= identity function of $A$	&\verb!i_{A}!\\
-%	$aaa$	&\verb!aaa!\\
-	$B^{A}$	~~= set of all functions	&\verb!B^{A}!\\
+	$i_{A}$	\hDesc{identity function of $A$}	&\verb!i_{A}!\\
+	$B^{A}$	\hDesc{set of all functions}	&\verb!B^{A}!\\
 	$\mathbb{A}$	&\verb!\mathbb{A}!\\
 	$\mathcal{A}$	&\verb!\mathcal{A}!\\
+%	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
 %	$aaa$	&\verb!aaa!\\
@@ -838,6 +991,7 @@
 	$x \bot y$ &\verb!x \bot y!\\
 	$x \perp y$	&\verb!x \perp y!\\
 	$x \ \mathrm{div} \ y$ &\verb!x \ \mathrm{div} \ y!\\
+%	$a \div b \rem c$\\
 	$x \ \mathrm{rem} \ y$ &\verb!x \ \mathrm{rem} \ y!\\
 	$\log_{2} x$ &\verb!\log_{2} x!\\[2pt]
 %	$H_{2} x$ &\verb!H_{2} x!\\
@@ -847,10 +1001,10 @@
 	$\frac{x}{y}$ &\verb!\frac{x}{y}!\\[2pt]
 	$\sqrt[n]{x}$ &\verb!\sqrt[n]{x}!\\
 	$a \bmod b$ &\verb!a \bmod b!\\
+	$\gcd(n,m\bmod n)$ &\verb!\gcd(n,m\bmod n)!\\
 	$0 \equiv 3 \pmod{3}$ &\verb!0 \equiv 3 \pmod{3}!\\
 	$0 \equiv 3 \mod{3}$  &\verb!0 \equiv 3 \mod{3}!\\
 	$0 \equiv 3 \pod{3}$ &\verb!0 \equiv 3 \pod{3}!\\
-%	$aaa$ &\verb!aaa!\\
 %	$aaa$ &\verb!aaa!\\
 \end{tabular}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Number Theory
@@ -862,120 +1016,19 @@
 \section{Combinatorics}
 
 \begin{tabular}{@{}ll@{}}
-	$n! = n$ factorial	&\verb!n!!\\[2pt]
-	$n^{\overline{r}}$ = $n$ to the $r$ rising	&\verb!n^{\overline{r}}!\\[2pt]
-	$n^{\underline{r}}$ = $n$ to the $r$ falling	&\verb!n^{\underline{r}}!\\[2pt]
-	$\binom{n}{r}$ = $n$ choose $r$	&\verb!\binom{n}{r}!\\[2pt]
-	${n \choose r}$ = $n$ choose $r$	&\verb!{n \choose r}!\\[2pt]
-	${n \brack r}$ = Stirling cycle number	&\verb!{n \brack r}!\\[2pt]
-	${n \brace r}$ = Stirling subset number &\verb!{n \brace r}!\\[2pt]
-	$S(n, k)$ = Stirling number	&\verb!S(n, k)!\\
+	$n!$	\hDesc{$n$ factorial}	&\verb!n!!\\[2pt]
+	$n^{\overline{r}}$	\hDesc{$n$ to the $r$ rising}	&\verb!n^{\overline{r}}!\\[2pt]
+	$n^{\underline{r}}$	\hDesc{$n$ to the $r$ falling}	&\verb!n^{\underline{r}}!\\[2pt]
+	$\binom{n}{r}$	\hDesc{$n$ choose $r$}	&\verb!\binom{n}{r}!\\[2pt]
+	${n \choose r}$	\hDesc{$n$ choose $r$}	&\verb!{n \choose r}!\\[2pt]
+	${n \brack r}$	\hDesc{Stirling cycle number}	&\verb!{n \brack r}!\\[2pt]
+	${n \brace r}$	\hDesc{Stirling subset number}	&\verb!{n \brace r}!\\[2pt]
+	$S(n, k)$	\hDesc{Stirling number}	&\verb!S(n, k)!\\
 	%=The number of partitions of an $n$-set into exactly $k$ nonempty subsets. \\
 	$B_{n}$ = The $n$th Bell number	&\verb!B_{n}!\\
 	%=The number of partitions of an $n$-set. \\
 \end{tabular}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Combinatorics
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\section{ $h$ extensions}
-
-\begin{verbatim}
-	See the source of this document.
-\end{verbatim}
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hTags
-\subsection{$h$Tags}
-\label{sec:hTags}
-
-%\begin{verbatim}
-%	\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}}
-%	\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}}
-%	\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }
-%	\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ }
-%\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	aa \hDed{dd} bb.	&\verb!aa \hDed{dd} bb.!\\
-	$x \hDiff  y$	&\verb!x \hDiff y!\\
-	$x \hDeq y$	&\verb!x \hDeq y!\\
-	$x \hDev y$	&\verb!x \hDev y!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hTags
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hPairs
-\subsection{$h$Pairs}
-\label{sec:pairs}
-
-%\begin{verbatim}
-%	\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert} 
-%	\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil}
-%	\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}
-%\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	$\hAbs{x}$	&\verb!\hAbs{x}!\\
-	$\hCeil{x}$	&\verb!\hCeil{x}!\\
-	$\hFloor{x}$	&\verb!\hFloor{x}!\\
-	$\| x \|$	&\verb!\| x \|!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hPairs
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Sets
-\subsection{$h$Sets}
-
-\begin{tabular}{@{}ll@{}}
-	\hSoN = The natural numbers	&\verb!\hSoN!\\
-	\hSoNp = Counting numbers	&\verb!\hSoNp!\\
-	\hSoZ = The integers	&\verb!\hSoZ!\\
-	\hSoZp = positive integers	&\verb!\hSoZp!\\
-	\hSoZn = negative integers	&\verb!\hSoZn! \\
-	\hSoZnn = nonnegative integers	&\verb!\hSoZnn!\\
-	\hSoZnz = nonzero integers	&\verb!\hSoZnz!\\
-	\hSoZnp = nonpositive integers	&\verb!\hSoZnp!\\
-	\hSoQ = The rational numbers	&\verb!\hSoQ!\\
-	\hSoQp = positive rational numbers	&\verb!\hSoQp!\\
-	\hSoQn = negative rational numbers	&\verb!\hSoQn!\\
-	\hSoQnn = nonnegative rationals	&\verb!\hSoQnn!\\
-	\hSoQnz = nonzero rationals	&\verb!\hSoQnz!\\
-	\hSoQnp = nonpositive rationals	&\verb!\hSoQnp!\\
-	\hSoR = The real numbers	&\verb!\hSoR!\\
-	\hSoRp = positive real numbers	&\verb!\hSoRp!\\
-	\hSoRn = negative real numbers	&\verb!\hSoRn!\\
-	\hSoRnn = nonnegative reals	&\verb!\hSoRnn!\\
-	\hSoRnz = nonzero reals	&\verb!\hSoRnz!\\
-	\hSoRnp = nonpositive reals	&\verb!\hSoRnp!\\
-	\hSoC = The complex numbers	&\verb!\hSoC!\\
-	\hSoCnz = nonzero complex numbers	&\verb!\hSoCnz!\\
-	\hSoPrimes = The set of Prime Numbers	&\verb!\hSoPrimes!\\
-	\hSoTruth	&\verb!\hSoTruth! \\
-	$\hSoBits = \{ 0, 1 \}$	&\verb!\hSoBits!\\
-	$\hSoSubsets{A}$	&\verb!\hSoSubsets{A}!\\
-	$\hSoPowerSet{A}$ = $\hSoSubsets{A}$= The set of all subsets	&\verb!\hSoPowerSet{A}! \\
-	$\hSoFunctions{A}{B}$=The set of all functions	&\verb!\hSoFunctions{A}{B}!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Sets
 
 
 
@@ -986,7 +1039,7 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \hSep
 \begin{multicols}{2}
-		inline: 
+		\hDesc{inline} 
 		$
 		  aaa
 		$  
@@ -997,7 +1050,7 @@
 		bbb
 \columnbreak
 	\begin{verbatim}
-		inline: 
+		inline
 		$
 		  aaa
 		$  
@@ -1011,10 +1064,10 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 \hSep
 \begin{multicols}{2}
-		display: \[ aaa\] bbb
+		\hDesc{display} \[ aaa\] bbb
 \columnbreak
 	\begin{verbatim}
-		display: 
+		display
 		\[
 		  aaa
 		\] 
@@ -1217,6 +1270,217 @@
 
 
 
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\section{ $h$ extensions}
+
+\begin{verbatim}
+	See the source of this document.
+\end{verbatim}
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hTags
+\subsection{$h$Tags}
+\label{sec:hTags}
+
+%\begin{verbatim}
+%	\newcommand{\hDed}[1]{\textcolor{darkred}{\textit{#1}}}
+%	\newcommand{\hDiff}{\ensuremath{\overset{\Delta}{\iff}}}
+%	\newcommand{\hDeq}{\ensuremath{\ \triangleq} \ }
+%	\newcommand{\hDev}{\ensuremath{\ \overset{\Delta}{\equiv}}\ }
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	aa \hDed{dd} bb.	&\verb!aa \hDed{dd} bb.!\\
+	$x \hDiff  y$	&\verb!x \hDiff y!\\
+	$x \hDeq y$	&\verb!x \hDeq y!\\
+	$x \hDev y$	&\verb!x \hDev y!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hTags
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V hPairs
+\subsection{$h$Pairs}
+\label{sec:pairs}
+
+%\begin{verbatim}
+%	\newcommand{\hAbs}[1]{\left\lvert\, #1\, \right\rvert} 
+%	\newcommand{\hCeil}[1]{\left\lceil\, #1\, \right\rceil}
+%	\newcommand{\hFloor}[1]	{\left\lfloor\, #1\, \right\rfloor}
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	$\hAbs{x}$	&\verb!\hAbs{x}!\\
+	$\hCeil{x}$	&\verb!\hCeil{x}!\\
+	$\hFloor{x}$	&\verb!\hFloor{x}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+
+See 
+\texttt{DeclarePairedDelimiter}
+in package \texttt{mathtools}.
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A hPairs
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Sets
+\subsection{$h$Sets}
+
+\begin{tabular}{@{}ll@{}}
+	\hSoN\ 	\hDesc{The natural numbers}	&\verb!\hSoN!\\
+%	\hSoNp\ 	\hDesc{Counting numbers}	&\verb!\hSoNp!\\
+	\hSoZ\ 	\hDesc{The integers}	&\verb!\hSoZ!\\
+	\hSoZp\ 	\hDesc{positive integers}	&\verb!\hSoZp!\\
+	\hSoZn\	\hDesc{negative integers}	&\verb!\hSoZn! \\
+	\hSoZnn\	\hDesc{nonnegative integers}	&\verb!\hSoZnn!\\
+	\hSoZnz\	\hDesc{nonzero integers}	&\verb!\hSoZnz!\\
+	\hSoZnp\	\hDesc{nonpositive integers}	&\verb!\hSoZnp!\\
+	\hSoQ\	\hDesc{The rational numbers}	&\verb!\hSoQ!\\
+	\hSoQp\	\hDesc{positive rational numbers}	&\verb!\hSoQp!\\
+	\hSoQn\	\hDesc{negative rational numbers}	&\verb!\hSoQn!\\
+	\hSoQnn\	\hDesc{nonnegative rationals}	&\verb!\hSoQnn!\\
+	\hSoQnz\	\hDesc{nonzero rationals}	&\verb!\hSoQnz!\\
+	\hSoQnp\	\hDesc{nonpositive rationals}	&\verb!\hSoQnp!\\
+	\hSoR\	\hDesc{The real numbers}	&\verb!\hSoR!\\
+	\hSoRp\	\hDesc{positive real numbers}	&\verb!\hSoRp!\\
+	\hSoRn\	\hDesc{negative real numbers}	&\verb!\hSoRn!\\
+	\hSoRnn\	\hDesc{nonnegative reals}	&\verb!\hSoRnn!\\
+	\hSoRnz\	\hDesc{nonzero reals}	&\verb!\hSoRnz!\\
+	\hSoRnp\	\hDesc{nonpositive reals}	&\verb!\hSoRnp!\\
+	\hSoC\	\hDesc{The complex numbers}	&\verb!\hSoC!\\
+	\hSoCnz\	\hDesc{nonzero complex numbers}	&\verb!\hSoCnz!\\
+%	\hSoPrimes\	\hDesc{The set of Prime Numbers}	&\verb!\hSoPrimes!\\
+%	\hSoTruth	&\verb!\hSoTruth! \\
+	$\hSoBits = \{ 0, 1 \}$	&\verb!\hSoBits!\\
+%	$\hSoSubsets{A}$	&\verb!\hSoSubsets{A}!\\
+%	$\hSoPowerSet{A}$ = $\hSoSubsets{A}$	\hDesc{The set of all subsets}	&\verb!\hSoPowerSet{A}! \\
+%	$\hSoFunctions{A}{B}$	\hDesc{The set of all functions}	&\verb!\hSoFunctions{A}{B}!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Sets
+
+
+
+
+%\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Lists
+\section{Lists}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\verb!\usepackage{enumerate}!
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+\hSep
+\begin{multicols}{2}
+		\hDesc{itemize}
+		\begin{itemize}
+		  \item aa
+		  \item bb
+		\end{itemize}
+\columnbreak
+	\begin{verbatim}
+		\begin{itemize}
+		  \item aa
+		  \item bb
+		\end{itemize}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\hDesc{enumerate}
+		\begin{enumerate}
+		  \item aa
+		  \item bb
+		\end{enumerate}
+\columnbreak
+	\begin{verbatim}
+		\begin{enumerate}
+		  \item aa
+		  \item bb
+		\end{enumerate}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{enumerate}[i)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
+\columnbreak
+	\begin{verbatim}
+		\begin{enumerate}[i)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
+	\end{verbatim}
+\end{multicols}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
+\hSep
+\begin{multicols}{2}
+		\begin{enumerate}[a)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
+\columnbreak
+	\begin{verbatim}
+		\begin{enumerate}[a)]
+		  \item aa
+		  \item bb
+		\end{enumerate}
+	\end{verbatim}
+\end{multicols}
+\hSep
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Lists
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Labels References
+\section{Labels and References}
+
+%\begin{verbatim}
+%	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
+%	\newcommand{\reftbl}[1]{Table~\ref{#1}}
+%	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
+%	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
+%	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
+%	\newcommand{\refdef}[1]{Definition~\ref{#1}}
+%	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
+%\end{verbatim}
+
+\begin{tabular}{@{}ll@{}}
+	$\refsec{sec:logic}$	&\verb!\refsec{sec:logic}! See \refsec{sec:logic}\\
+	$\refeq{eq:equationA}$	&\verb!\refeq{eq:equationA}! See \refsec{sec:equations}\\
+	$\refeq{eq:equationB}$	&\verb!\refeq{eq:equationB}! See \refsec{sec:equations}\\
+	$\refeq{eq:equationC}$	&\verb!\refeq{eq:equationC}! See \refsec{sec:equations}\\
+	$\refdef{def:aa}$	&\verb!\refdef{def:aa}! See \refsec{sec:environments}\\
+	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}! See \refsec{sec:environments}\\
+	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}! See \refsec{sec:environments}\\
+%	$aaa$	&\verb!aaa!\\
+%	$aaa$	&\verb!aaa!\\
+\end{tabular}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Labels References
+
+
+
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V xymatrix
 \section{xymatrix}
 
@@ -1285,111 +1549,6 @@ $
 
 
 
-\columnbreak % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  column-3
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Lists
-\section{Lists}
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\verb!\usepackage{enumerate}!
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-\hSep
-\begin{multicols}{2}
-		\begin{itemize}
-		  \item aa
-		  \item bb
-		\end{itemize}
-\columnbreak
-	\begin{verbatim}
-		\begin{itemize}
-		  \item aa
-		  \item bb
-		\end{itemize}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{enumerate}
-		  \item aa
-		  \item bb
-		\end{enumerate}
-\columnbreak
-	\begin{verbatim}
-		\begin{enumerate}
-		  \item aa
-		  \item bb
-		\end{enumerate}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{enumerate}[i)]
-		  \item aa
-		  \item bb
-		\end{enumerate}
-\columnbreak
-	\begin{verbatim}
-		\begin{enumerate}[i)]
-		  \item aa
-		  \item bb
-		\end{enumerate}
-	\end{verbatim}
-\end{multicols}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -
-\hSep
-\begin{multicols}{2}
-		\begin{enumerate}[a)]
-		  \item aa
-		  \item bb
-		\end{enumerate}
-\columnbreak
-	\begin{verbatim}
-		\begin{enumerate}[a)]
-		  \item aa
-		  \item bb
-		\end{enumerate}
-	\end{verbatim}
-\end{multicols}
-\hSep
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Lists
-
-
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V Labels References
-\subsection{Labels and References}
-
-%\begin{verbatim}
-%	\newcommand{\reffig}[1]{Fig.~\ref{#1}}
-%	\newcommand{\reftbl}[1]{Table~\ref{#1}}
-%	\newcommand{\refsec}[1]{Sec.~\ref{#1}}
-%	\newcommand{\refthm}[1]{Theorem~\ref{#1}}
-%	\newcommand{\reflem}[1]{Lemma~\ref{#1}}
-%	\newcommand{\refdef}[1]{Definition~\ref{#1}}
-%	\newcommand{\refeq}[1]{Eq.~\ref{#1}}
-%\end{verbatim}
-
-\begin{tabular}{@{}ll@{}}
-	$\refsec{sec:logic}$	&\verb!\refsec{sec:logic}! See \refsec{sec:logic}\\
-	$\refeq{eq:equationA}$	&\verb!\refeq{eq:equationA}! See \refsec{sec:equations}\\
-	$\refeq{eq:equationB}$	&\verb!\refeq{eq:equationB}! See \refsec{sec:equations}\\
-	$\refeq{eq:equationC}$	&\verb!\refeq{eq:equationC}! See \refsec{sec:equations}\\
-	$\refdef{def:aa}$	&\verb!\refdef{def:aa}! See \refsec{sec:environments}\\
-	$\refthm{thm:gauss}$	&\verb!\refthm{thm:gauss}! See \refsec{sec:environments}\\
-	$\reflem{lem:fermat}$	&\verb!\reflem{lem:fermat}! See \refsec{sec:environments}\\
-%	$aaa$	&\verb!aaa!\\
-%	$aaa$	&\verb!aaa!\\
-\end{tabular}
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A Labels References
-
-
-
-
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V
 \section{Citation and BibTeX}
 
@@ -1419,19 +1578,24 @@ $
 \columnbreak
 	\begin{verbatim}
 		\bibliographystyle{ieeetr}
-		\bibliography{b=BibTeXfile}
+		\bibliography{BibTeXfile}
 	\end{verbatim}
 \end{multicols}
 
 
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ V thebibliography
 \begin{thebibliography}{1}
 
 \bibitem{knuth1984texbook}
-D.~E. Knuth, {\em The TeXbook}.
+D.~E. Knuth, 
+{\em The TeXbook}.
 \newblock Addison-Wesley, 1984.
 
 \bibitem{lamport1994latex}
-L.~Lamport, {\em LaTeX: A document preparation system}.
+L.~Lamport, 
+{\em LaTeX: A document preparation system}.
 \newblock Addison-Wesley, 1994.
 
 \end{thebibliography}
@@ -1449,7 +1613,7 @@ L.~Lamport, {\em LaTeX: A document preparation system}.
 		{bingol@boun.edu.tr}
 		{bingol@boun.edu.tr}
 	\copyright 2021\\
-	Permission is granted to make and distribute copies of this card 
+	Permission is granted to make and distribute copies of this card. 
 	Provided the copyright notice and this permission notice 
 	are preserved on all copies.\\
 \end{tiny}
